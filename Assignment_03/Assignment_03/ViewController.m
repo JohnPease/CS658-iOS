@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "BurnGenerator.h"
+#import "MadLibGenerator.h"
 
 @interface ViewController ()
 
@@ -24,6 +26,22 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)burnButtonPressed:(id)sender {
+    BurnGenerator* burnGenerator = [[BurnGenerator alloc] init];
+    [burnGenerator setTemplates:[burnGenerator templates]];
+    NSString *burns = [burnGenerator generate];
+    [_textView setText:burns];
+    for (WordTemplate *temp in [burnGenerator templates]) [temp clearFilledTemplate];
+}
+
+- (IBAction)madLibButtonPresed:(id)sender {
+    MadLibGenerator* madLibGenerator = [[MadLibGenerator alloc] init];
+    [madLibGenerator setTemplates:[madLibGenerator templates]];
+    NSString *madLibs = [madLibGenerator generate];
+    [_textView setText:madLibs];
+    for (WordTemplate *temp in [madLibGenerator templates]) [temp clearFilledTemplate];
 }
 
 @end

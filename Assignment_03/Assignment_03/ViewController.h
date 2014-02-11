@@ -10,4 +10,11 @@
 
 @interface ViewController : UIViewController
 
+@property(nonatomic, weak) IBOutlet UITextView *textView;
+@property(nonatomic, weak) IBOutlet UIButton *burnButton;
+@property(nonatomic, weak) IBOutlet UIButton *madLibButton;
+
+- (IBAction)burnButtonPressed:(id)sender;
+- (IBAction)madLibButtonPresed:(id)sender;
+
 @end

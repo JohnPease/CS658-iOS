@@ -40,7 +40,7 @@
 			[[super templates] addObject:wordTemplate];
 			tempString = @"";
 		} else {
-			tempString = [tempString stringByAppendingFormat:@"%@\n", fileLine];
+			tempString = [tempString stringByAppendingFormat:@"%@ ", fileLine];
 		}
 	}
 }
