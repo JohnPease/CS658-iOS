@@ -13,7 +13,6 @@
 		33932CEF18AAD9950079F41D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33932CED18AAD9950079F41D /* InfoPlist.strings */; };
 		33932CF118AAD9950079F41D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33932CF018AAD9950079F41D /* main.m */; };
 		33932CF518AAD9950079F41D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33932CF418AAD9950079F41D /* AppDelegate.m */; };
-		33932CF818AAD9950079F41D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33932CF618AAD9950079F41D /* Main.storyboard */; };
 		33932CFE18AAD9950079F41D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33932CFD18AAD9950079F41D /* ViewController.m */; };
 		33932D0018AAD9950079F41D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33932CFF18AAD9950079F41D /* Images.xcassets */; };
 		33932D0718AAD9950079F41D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33932D0618AAD9950079F41D /* XCTest.framework */; };
@@ -26,9 +25,6 @@
 		33932D2818AADBC10079F41D /* MadLibGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 33932D2118AADBC10079F41D /* MadLibGenerator.m */; };
 		33932D2918AADBC10079F41D /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 33932D2318AADBC10079F41D /* Word.m */; };
 		33932D2A18AADBC10079F41D /* WordTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33932D2518AADBC10079F41D /* WordTemplate.m */; };
-		33932D3718AADC930079F41D /* burnTemplateList.txt in Resources */ = {isa = PBXBuildFile; fileRef = 33932D3418AADC930079F41D /* burnTemplateList.txt */; };
-		33932D3818AADC930079F41D /* madLibTemplateList.txt in Resources */ = {isa = PBXBuildFile; fileRef = 33932D3518AADC930079F41D /* madLibTemplateList.txt */; };
-		33932D3918AADC930079F41D /* wordList.txt in Resources */ = {isa = PBXBuildFile; fileRef = 33932D3618AADC930079F41D /* wordList.txt */; };
 		33932D3E18AAE5320079F41D /* burnTemplateList.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 33932D3418AADC930079F41D /* burnTemplateList.txt */; };
 		33932D3F18AAE5320079F41D /* madLibTemplateList.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 33932D3518AADC930079F41D /* madLibTemplateList.txt */; };
 		33932D4018AAE5320079F41D /* wordList.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 33932D3618AADC930079F41D /* wordList.txt */; };
@@ -298,11 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33932D0018AAD9950079F41D /* Images.xcassets in Resources */,
-				33932CF818AAD9950079F41D /* Main.storyboard in Resources */,
-				33932D3918AADC930079F41D /* wordList.txt in Resources */,
 				33932CEF18AAD9950079F41D /* InfoPlist.strings in Resources */,
-				33932D3718AADC930079F41D /* burnTemplateList.txt in Resources */,
-				33932D3818AADC930079F41D /* madLibTemplateList.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +533,7 @@
 				33932D1818AAD9950079F41D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33932D1918AAD9950079F41D /* Build configuration list for PBXNativeTarget "Assignment_03Tests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +542,7 @@
 				33932D1B18AAD9950079F41D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
