@@ -10,9 +10,14 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface ViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, MKAnnotation>
 
 @property(nonatomic, weak) IBOutlet MKMapView* mapView;
 @property(nonatomic, strong) CLLocationManager* locationManager;
+@property(nonatomic, strong) IBOutlet UILabel* streetLabel;
+@property(nonatomic, strong) CLGeocoder* geocoder;
+
+- (IBAction)mapTypeControl:(id)sender;
+- (IBAction)markItButtonPressed:(id)sender;
 
 @end

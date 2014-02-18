@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3351441318B41F7D00210329 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3351441218B41F7D00210329 /* MapAnnotation.m */; };
 		5288594F18B30A0E007088C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5288594E18B30A0E007088C7 /* Foundation.framework */; };
 		5288595118B30A0E007088C7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5288595018B30A0E007088C7 /* CoreGraphics.framework */; };
 		5288595318B30A0E007088C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5288595218B30A0E007088C7 /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3351441118B41F7D00210329 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
+		3351441218B41F7D00210329 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
 		5288594B18B30A0E007088C7 /* Assignment_04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment_04.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5288594E18B30A0E007088C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5288595018B30A0E007088C7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 				5288596418B30A0E007088C7 /* ViewController.m */,
 				5288596618B30A0E007088C7 /* Images.xcassets */,
 				5288595518B30A0E007088C7 /* Supporting Files */,
+				3351441118B41F7D00210329 /* MapAnnotation.h */,
+				3351441218B41F7D00210329 /* MapAnnotation.m */,
 			);
 			path = Assignment_04;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 				5288596518B30A0E007088C7 /* ViewController.m in Sources */,
 				5288595F18B30A0E007088C7 /* AppDelegate.m in Sources */,
 				5288595B18B30A0E007088C7 /* main.m in Sources */,
+				3351441318B41F7D00210329 /* MapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +474,7 @@
 				5288597F18B30A0E007088C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5288598018B30A0E007088C7 /* Build configuration list for PBXNativeTarget "Assignment_04Tests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +483,7 @@
 				5288598218B30A0E007088C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
