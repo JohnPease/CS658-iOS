@@ -55,7 +55,6 @@
     if (![[_mapView annotations] containsObject:mapAnnotation]) {
         [_mapView addAnnotation:mapAnnotation];
     }
-    [_streetLabel setText:[_placemark name]];
 }
 
 /* convert latitude/longitude to street address */
@@ -73,7 +72,9 @@
 //CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     CLLocation* location = [locations lastObject];
+    NSLog(@"updating");
     [self reverseGeocodeLocation:location];
+    [_streetLabel setText:[_placemark name]];
 }
 
 @end
