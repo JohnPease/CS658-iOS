@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MapAnnotation.h"
 
 @interface ViewController ()
 @property(nonatomic, strong)CLPlacemark* placemark;
@@ -23,6 +24,7 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     self.locationManager.delegate = self;
     [self.locationManager startUpdatingLocation];
+    self.geocoder = [[CLGeocoder alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,9 +46,19 @@
     }
 }
 
+/* add pin to map */
 - (IBAction)markItButtonPressed:(id)sender {
+    CLLocationCoordinate2D loc      = [[_placemark location] coordinate];
+    
+    MapAnnotation* mapAnnotation    = [[MapAnnotation alloc] initWithCoordinate:loc street:[_placemark name] city:[_placemark locality]];
+    
+    if (![[_mapView annotations] containsObject:mapAnnotation]) {
+        [_mapView addAnnotation:mapAnnotation];
+    }
+    [_streetLabel setText:[_placemark name]];
 }
 
+/* convert latitude/longitude to street address */
 - (void)reverseGeocodeLocation:(CLLocation*)location {
     [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray* placemarks, NSError* error) {
         self.placemark = [placemarks objectAtIndex:0];
@@ -61,7 +73,7 @@
 //CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     CLLocation* location = [locations lastObject];
-    NSLog(@"Location: %@", location);
+    [self reverseGeocodeLocation:location];
 }
 
 @end

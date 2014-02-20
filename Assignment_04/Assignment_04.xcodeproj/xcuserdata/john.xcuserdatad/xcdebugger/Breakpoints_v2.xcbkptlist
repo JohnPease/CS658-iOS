@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Assignment_04/ViewController.m"
-            timestampString = "414390893.946885"
+            timestampString = "414605104.445178"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-mapViewDidFinishLoadingMap:"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "-mapTypeControl:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Assignment_04/ViewController.m"
-            timestampString = "414390700.66004"
+            timestampString = "414605104.445178"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "-locationManager:didUpdateLocations:"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-mapTypeControl:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
