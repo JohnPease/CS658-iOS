@@ -18,6 +18,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    /* set text to impact */
+    UIFont* font = [UIFont fontWithName:@"Impact" size:18];
+    self.upperTextView.font = font;
+    self.lowerTextView.font = font;
+    self.upperTextView.textColor = [UIColor whiteColor];
+    self.lowerTextView.textColor = [UIColor whiteColor];
+    self.upperTextView.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.lowerTextView.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.upperTextView.layer.shadowOffset = CGSizeMake(2.0f, 2.0f);
+    self.lowerTextView.layer.shadowOffset = CGSizeMake(2.0f, 2.0f);
+    self.upperTextView.layer.shadowOpacity = 1.0f;
+    self.lowerTextView.layer.shadowOpacity = 1.0f;
+    self.upperTextView.layer.shadowRadius = 2.0f;
+    self.lowerTextView.layer.shadowRadius = 2.0f;
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -28,6 +43,33 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+/* respond to gestures */
+- (IBAction)imageTapped:(id)sender {
+    UIImagePickerController* imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (IBAction)upperTextDragged:(id)sender {
+    sender = [[UIPanGestureRecognizer alloc] init];
+    CGPoint loc = [sender translationInView:_upperTextView];
+    
+    _upperTextView.center = CGPointMake(loc.x, loc.y);
+    
+    [sender setTranslation:loc inView:_upperTextView];
+}
+
+- (IBAction)lowerTextDragged:(id)sender {
+    
 }
 
 /* ImagePicker delegate */

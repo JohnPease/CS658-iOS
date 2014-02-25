@@ -20,22 +20,74 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="y2T-4f-LBK" appends="YES" id="akP-bP-7Jo"/>
+                                </connections>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Upper text heeeeeeere" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EVw-Uj-iec">
+                                <rect key="frame" x="20" y="20" width="280" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="BKn-pF-1Eu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CA5-I2-2hi" appends="YES" id="U2R-qo-o22"/>
+                                </connections>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="bottom text heeeeeeere" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cyO-lh-cAq">
+                                <rect key="frame" x="20" y="420" width="280" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="2zb-Bc-frr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Hah-O1-xc3" appends="YES" id="Bnl-o1-BLD"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Lkz-Qd-RU8" secondAttribute="trailing" id="3eb-BN-5YT"/>
-                            <constraint firstItem="Q1z-Dg-Dab" firstAttribute="top" secondItem="Lkz-Qd-RU8" secondAttribute="bottom" constant="-548" id="41N-a3-zta"/>
                             <constraint firstItem="ria-qq-tSr" firstAttribute="top" secondItem="Lkz-Qd-RU8" secondAttribute="bottom" id="Cv3-3f-cAG"/>
+                            <constraint firstItem="EVw-Uj-iec" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" symbolic="YES" id="KIM-uo-ve0"/>
+                            <constraint firstItem="EVw-Uj-iec" firstAttribute="centerX" secondItem="Lkz-Qd-RU8" secondAttribute="centerX" id="SAp-jt-hy3"/>
+                            <constraint firstAttribute="bottom" secondItem="cyO-lh-cAq" secondAttribute="bottom" constant="20" symbolic="YES" id="Vhj-hj-Jhr"/>
                             <constraint firstItem="Lkz-Qd-RU8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Vyy-4L-7SD"/>
                             <constraint firstItem="Lkz-Qd-RU8" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="jk2-Lr-A1s"/>
+                            <constraint firstItem="EVw-Uj-iec" firstAttribute="leading" secondItem="cyO-lh-cAq" secondAttribute="leading" id="pCC-7M-UwY"/>
+                            <constraint firstItem="Q1z-Dg-Dab" firstAttribute="top" secondItem="Lkz-Qd-RU8" secondAttribute="bottom" constant="-548" id="qUh-fM-3by"/>
+                            <constraint firstItem="EVw-Uj-iec" firstAttribute="trailing" secondItem="cyO-lh-cAq" secondAttribute="trailing" id="wS0-g9-Du6"/>
+                            <constraint firstItem="EVw-Uj-iec" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="xVK-Oc-afz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Lkz-Qd-RU8" id="baB-h5-dbT"/>
+                        <outlet property="lowerTextView" destination="cyO-lh-cAq" id="pRn-uK-Ot0"/>
+                        <outlet property="upperTextView" destination="EVw-Uj-iec" id="NYg-r1-8xh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="y2T-4f-LBK">
+                    <connections>
+                        <action selector="imageTapped:" destination="vXZ-lx-hvc" id="YBl-jT-lD9"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="CA5-I2-2hi">
+                    <connections>
+                        <action selector="upperTextDragged:" destination="vXZ-lx-hvc" id="DG2-3G-eEK"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Hah-O1-xc3">
+                    <connections>
+                        <action selector="lowerTextDragged:" destination="vXZ-lx-hvc" id="h7E-ap-WJs"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
         </scene>
     </scenes>

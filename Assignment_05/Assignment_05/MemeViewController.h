@@ -12,4 +12,7 @@
 
 @property(nonatomic, weak) IBOutlet UIImageView* imageView;
 
+@property(nonatomic, weak) IBOutlet UITextView *upperTextView;
+@property(nonatomic, weak) IBOutlet UITextView *lowerTextView;
+
 @end
