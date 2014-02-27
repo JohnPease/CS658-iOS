@@ -24,12 +24,12 @@
                                     <outletCollection property="gestureRecognizers" destination="y2T-4f-LBK" appends="YES" id="akP-bP-7Jo"/>
                                 </connections>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Upper text heeeeeeere" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EVw-Uj-iec">
-                                <rect key="frame" x="20" y="20" width="280" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Upper text here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EVw-Uj-iec">
+                                <rect key="frame" x="20" y="20" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="BKn-pF-1Eu"/>
+                                    <constraint firstAttribute="height" constant="30" id="tbX-wM-sYp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -37,12 +37,12 @@
                                     <outletCollection property="gestureRecognizers" destination="CA5-I2-2hi" appends="YES" id="U2R-qo-o22"/>
                                 </connections>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="bottom text heeeeeeere" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cyO-lh-cAq">
-                                <rect key="frame" x="20" y="420" width="280" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="bottom text here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cyO-lh-cAq">
+                                <rect key="frame" x="20" y="516" width="280" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="2zb-Bc-frr"/>
+                                    <constraint firstAttribute="height" constant="32" id="0eZ-a6-VIK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -53,17 +53,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Lkz-Qd-RU8" secondAttribute="trailing" id="3eb-BN-5YT"/>
-                            <constraint firstItem="ria-qq-tSr" firstAttribute="top" secondItem="Lkz-Qd-RU8" secondAttribute="bottom" id="Cv3-3f-cAG"/>
-                            <constraint firstItem="EVw-Uj-iec" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" symbolic="YES" id="KIM-uo-ve0"/>
-                            <constraint firstItem="EVw-Uj-iec" firstAttribute="centerX" secondItem="Lkz-Qd-RU8" secondAttribute="centerX" id="SAp-jt-hy3"/>
-                            <constraint firstAttribute="bottom" secondItem="cyO-lh-cAq" secondAttribute="bottom" constant="20" symbolic="YES" id="Vhj-hj-Jhr"/>
-                            <constraint firstItem="Lkz-Qd-RU8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Vyy-4L-7SD"/>
-                            <constraint firstItem="Lkz-Qd-RU8" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="jk2-Lr-A1s"/>
-                            <constraint firstItem="EVw-Uj-iec" firstAttribute="leading" secondItem="cyO-lh-cAq" secondAttribute="leading" id="pCC-7M-UwY"/>
-                            <constraint firstItem="Q1z-Dg-Dab" firstAttribute="top" secondItem="Lkz-Qd-RU8" secondAttribute="bottom" constant="-548" id="qUh-fM-3by"/>
-                            <constraint firstItem="EVw-Uj-iec" firstAttribute="trailing" secondItem="cyO-lh-cAq" secondAttribute="trailing" id="wS0-g9-Du6"/>
-                            <constraint firstItem="EVw-Uj-iec" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="xVK-Oc-afz"/>
+                            <constraint firstItem="Lkz-Qd-RU8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="0z1-s2-OdL"/>
+                            <constraint firstAttribute="trailing" secondItem="EVw-Uj-iec" secondAttribute="trailing" constant="20" symbolic="YES" id="3Jq-oc-G47"/>
+                            <constraint firstItem="EVw-Uj-iec" firstAttribute="leading" secondItem="cyO-lh-cAq" secondAttribute="leading" id="FFd-Ls-Zor"/>
+                            <constraint firstItem="Lkz-Qd-RU8" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="KDB-lo-Ehm"/>
+                            <constraint firstAttribute="bottom" secondItem="Lkz-Qd-RU8" secondAttribute="bottom" id="N0H-aP-Giq"/>
+                            <constraint firstItem="EVw-Uj-iec" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" symbolic="YES" id="SUd-WX-opJ"/>
+                            <constraint firstItem="EVw-Uj-iec" firstAttribute="centerX" secondItem="Lkz-Qd-RU8" secondAttribute="centerX" id="Xik-pg-UMq"/>
+                            <constraint firstAttribute="bottom" secondItem="cyO-lh-cAq" secondAttribute="bottom" constant="20" symbolic="YES" id="iPk-U8-Nqj"/>
+                            <constraint firstItem="EVw-Uj-iec" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="vRh-6c-f6A"/>
+                            <constraint firstItem="cyO-lh-cAq" firstAttribute="trailing" secondItem="EVw-Uj-iec" secondAttribute="trailing" id="zqT-WL-78i"/>
                         </constraints>
                     </view>
                     <connections>
@@ -80,12 +79,12 @@
                 </tapGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="CA5-I2-2hi">
                     <connections>
-                        <action selector="upperTextDragged:" destination="vXZ-lx-hvc" id="DG2-3G-eEK"/>
+                        <action selector="textViewDragged:" destination="vXZ-lx-hvc" id="Wr8-Hd-sMy"/>
                     </connections>
                 </panGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="Hah-O1-xc3">
                     <connections>
-                        <action selector="lowerTextDragged:" destination="vXZ-lx-hvc" id="h7E-ap-WJs"/>
+                        <action selector="textViewDragged:" destination="vXZ-lx-hvc" id="eFc-ue-Hie"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>

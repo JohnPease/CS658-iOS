@@ -59,17 +59,13 @@
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
-- (IBAction)upperTextDragged:(id)sender {
-    sender = [[UIPanGestureRecognizer alloc] init];
-    CGPoint loc = [sender translationInView:_upperTextView];
+- (IBAction)textViewDragged:(id)sender {
+    UIPanGestureRecognizer *pan = (UIPanGestureRecognizer*)sender;
+    CGPoint loc = [pan translationInView:[pan view]];
     
-    _upperTextView.center = CGPointMake(loc.x, loc.y);
-    
-    [sender setTranslation:loc inView:_upperTextView];
-}
-
-- (IBAction)lowerTextDragged:(id)sender {
-    
+   [pan view].center = CGPointMake([pan view].center.x, [pan view].center.y + loc.y);
+   [sender setTranslation:loc inView:[pan view]];
+   [sender setTranslation:CGPointZero inView:[pan view]];
 }
 
 /* ImagePicker delegate */
