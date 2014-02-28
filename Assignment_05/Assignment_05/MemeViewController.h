@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MemeViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface MemeViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate>
 
 @property(nonatomic, weak) IBOutlet UIImageView* imageView;
 

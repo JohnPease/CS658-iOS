@@ -24,12 +24,12 @@
                                     <outletCollection property="gestureRecognizers" destination="y2T-4f-LBK" appends="YES" id="akP-bP-7Jo"/>
                                 </connections>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Upper text here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EVw-Uj-iec">
-                                <rect key="frame" x="20" y="20" width="280" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EVw-Uj-iec">
+                                <rect key="frame" x="20" y="20" width="280" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="tbX-wM-sYp"/>
+                                    <constraint firstAttribute="height" constant="73" id="8cb-tb-hb7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -37,12 +37,12 @@
                                     <outletCollection property="gestureRecognizers" destination="CA5-I2-2hi" appends="YES" id="U2R-qo-o22"/>
                                 </connections>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="bottom text here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cyO-lh-cAq">
-                                <rect key="frame" x="20" y="516" width="280" height="32"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cyO-lh-cAq">
+                                <rect key="frame" x="20" y="477" width="280" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="0eZ-a6-VIK"/>
+                                    <constraint firstAttribute="height" constant="71" id="kma-yA-ah9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -53,16 +53,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Lkz-Qd-RU8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="0z1-s2-OdL"/>
-                            <constraint firstAttribute="trailing" secondItem="EVw-Uj-iec" secondAttribute="trailing" constant="20" symbolic="YES" id="3Jq-oc-G47"/>
-                            <constraint firstItem="EVw-Uj-iec" firstAttribute="leading" secondItem="cyO-lh-cAq" secondAttribute="leading" id="FFd-Ls-Zor"/>
-                            <constraint firstItem="Lkz-Qd-RU8" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="KDB-lo-Ehm"/>
-                            <constraint firstAttribute="bottom" secondItem="Lkz-Qd-RU8" secondAttribute="bottom" id="N0H-aP-Giq"/>
-                            <constraint firstItem="EVw-Uj-iec" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" symbolic="YES" id="SUd-WX-opJ"/>
-                            <constraint firstItem="EVw-Uj-iec" firstAttribute="centerX" secondItem="Lkz-Qd-RU8" secondAttribute="centerX" id="Xik-pg-UMq"/>
-                            <constraint firstAttribute="bottom" secondItem="cyO-lh-cAq" secondAttribute="bottom" constant="20" symbolic="YES" id="iPk-U8-Nqj"/>
-                            <constraint firstItem="EVw-Uj-iec" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="vRh-6c-f6A"/>
-                            <constraint firstItem="cyO-lh-cAq" firstAttribute="trailing" secondItem="EVw-Uj-iec" secondAttribute="trailing" id="zqT-WL-78i"/>
+                            <constraint firstItem="Lkz-Qd-RU8" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="5u4-JK-R8P"/>
+                            <constraint firstAttribute="bottom" secondItem="cyO-lh-cAq" secondAttribute="bottom" constant="20" symbolic="YES" id="Afl-Jf-Tyt"/>
+                            <constraint firstItem="Lkz-Qd-RU8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ClW-Dy-G6q"/>
+                            <constraint firstItem="EVw-Uj-iec" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" symbolic="YES" id="LUg-UX-puH"/>
+                            <constraint firstItem="cyO-lh-cAq" firstAttribute="leading" secondItem="EVw-Uj-iec" secondAttribute="leading" id="Oxd-1y-t4g"/>
+                            <constraint firstAttribute="bottom" secondItem="Lkz-Qd-RU8" secondAttribute="bottom" id="Pei-uF-gre"/>
+                            <constraint firstItem="Lkz-Qd-RU8" firstAttribute="centerX" secondItem="EVw-Uj-iec" secondAttribute="centerX" id="ToW-WZ-RS5"/>
+                            <constraint firstItem="cyO-lh-cAq" firstAttribute="trailing" secondItem="EVw-Uj-iec" secondAttribute="trailing" id="aX3-XW-Go4"/>
+                            <constraint firstItem="EVw-Uj-iec" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="x9G-rW-6zZ"/>
+                            <constraint firstAttribute="trailing" secondItem="EVw-Uj-iec" secondAttribute="trailing" constant="20" symbolic="YES" id="xtW-P1-Yg5"/>
                         </constraints>
                     </view>
                     <connections>
