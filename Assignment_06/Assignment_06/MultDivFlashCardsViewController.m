@@ -7,15 +7,16 @@
 //
 
 #import "MultDivFlashCardsViewController.h"
+#define MULT (@"multiplication")
+#define DIV (@"division")
 
-#import "AddSubFlashCardsViewController.h"
-
-@interface AddSubFlashCardsViewController ()
+@interface MultDivFlashCardsViewController ()
 @property(nonatomic, strong) NSString* answer;
 @property(nonatomic) BOOL isQuestionDisplayed;
+@property(nonatomic, strong) NSString* equationType;
 @end
 
-@implementation AddSubFlashCardsViewController
+@implementation MultDivFlashCardsViewController
 
 - (void)viewDidLoad
 {
@@ -23,15 +24,15 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.isQuestionDisplayed = YES;
     [self generateEquation];
-    [self.answerLabel setText:@""];
+//    [self.answerLabel setText:@""];
     
-    UIView* underlineView = [[UIView alloc] init];
-    CGFloat xCoordinate = self.operatorLabel.frame.origin.x;
-    CGFloat yCoordinate = self.operatorLabel.frame.origin.y + self.operatorLabel.frame.size.height;
-    CGFloat width = self.operatorLabel.frame.size.width + self.operand2Label.frame.size.width;
-    underlineView.frame = CGRectMake(xCoordinate, yCoordinate, width, 5);
-    underlineView.backgroundColor = [UIColor blackColor];
-    [self.view addSubview:underlineView];
+//    UIView* underlineView = [[UIView alloc] init];
+//    CGFloat xCoordinate = self.operatorLabel.frame.origin.x;
+//    CGFloat yCoordinate = self.operatorLabel.frame.origin.y + self.operatorLabel.frame.size.height;
+//    CGFloat width = self.operatorLabel.frame.size.width + self.operand2Label.frame.size.width;
+//    underlineView.frame = CGRectMake(xCoordinate, yCoordinate, width, 5);
+//    underlineView.backgroundColor = [UIColor blackColor];
+//    [self.view addSubview:underlineView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,27 +42,72 @@
 }
 
 - (IBAction)screenTapped {
+    
     if (self.isQuestionDisplayed) {
-        [self.answerLabel setText:self.answer];
+        if ([self.equationType isEqualToString:MULT]) {
+            [self.bottomLabel setText:self.answer];
+        } else if ([self.equationType isEqualToString:DIV]) {
+            [self.topLabel setText:self.answer];
+        }
         self.isQuestionDisplayed = NO;
     } else {
         [self generateEquation];
-        [self.answerLabel setText:@""];
         self.isQuestionDisplayed = YES;
     }
 }
 
 - (void)generateEquation {
-    int operand1 = arc4random_uniform(99) + 1;
-    int operand2 = arc4random_uniform(99) + 1;
     int operation = arc4random_uniform(2);
-    NSString* operator = (operation==0)?@"+":@"-";
+    if (operation == 0) {
+        [self resetUI];
+        [self generateMultiplicationProblem];
+        self.equationType = [NSString stringWithFormat:MULT];
+    } else {
+        [self resetUI];
+        [self generateDivisionProblem];
+        self.equationType = [NSString stringWithFormat:DIV];
+    }
+}
+
+- (void)generateMultiplicationProblem {
+    int multiplicand = arc4random_uniform(9) + 1;
+    int multiplier = arc4random_uniform(9) + 1;
+    self.answer = [NSString stringWithFormat:@"%i", multiplicand * multiplier];
     
-    self.answer = [NSString stringWithFormat:@"%i", (operation==0)?(operand1+operand2):(operand1-operand2)];
+    /* set labels */
+    [self.leftLabel setText:@"x"];
+    [self.topLabel setText:[NSString stringWithFormat:@"%i", multiplicand]];
+    [self.rightLabel setText:[NSString stringWithFormat:@"%i", multiplier]];
     
-    [self.operand1Label setText:[NSString stringWithFormat:@"%i", operand1]];
-    [self.operand2Label setText:[NSString stringWithFormat:@"%i", operand2]];
-    [self.operatorLabel setText:operator];
+    /* set lines */
+    UIView* underlineView = [[UIView alloc] init];
+    CGFloat xCoordinate = self.leftLabel.frame.origin.x;
+    CGFloat yCoordinate = self.leftLabel.frame.origin.y + self.leftLabel.frame.size.height;
+    CGFloat width = self.leftLabel.frame.size.width + self.rightLabel.frame.size.width;
+    underlineView.frame = CGRectMake(xCoordinate, yCoordinate, width, 5);
+    underlineView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:underlineView];
+}
+
+- (void)generateDivisionProblem {
+    int divisor = arc4random_uniform(9) + 1;
+    int quotient = arc4random_uniform(10) + 1;
+    int dividend = divisor * quotient;
+    self.answer = [NSString stringWithFormat:@"%i", quotient];
+    
+    /* set labels */
+    [self.topLabel setText:@""];
+    [self.leftLabel setText:[NSString stringWithFormat:@"%i", divisor]];
+    [self.rightLabel setText:[NSString stringWithFormat:@"%i", dividend]];
+    
+    /* set lines */
+}
+
+- (void)resetUI {
+    [self.leftLabel setText:@""];
+    [self.topLabel setText:@""];
+    [self.rightLabel setText:@""];
+    [self.bottomLabel setText:@""];
 }
 
 @end

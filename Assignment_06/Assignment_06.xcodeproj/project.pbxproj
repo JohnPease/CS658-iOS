@@ -15,7 +15,6 @@
 		52AEF96118C566C100D1B0F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52AEF95F18C566C100D1B0F3 /* InfoPlist.strings */; };
 		52AEF96318C566C100D1B0F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AEF96218C566C100D1B0F3 /* main.m */; };
 		52AEF96718C566C100D1B0F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AEF96618C566C100D1B0F3 /* AppDelegate.m */; };
-		52AEF96A18C566C100D1B0F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AEF96818C566C100D1B0F3 /* Main.storyboard */; };
 		52AEF96D18C566C100D1B0F3 /* AddSubFlashCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AEF96C18C566C100D1B0F3 /* AddSubFlashCardsViewController.m */; };
 		52AEF97018C566C100D1B0F3 /* AddSubQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AEF96F18C566C100D1B0F3 /* AddSubQuizViewController.m */; };
 		52AEF97218C566C100D1B0F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AEF97118C566C100D1B0F3 /* Images.xcassets */; };
@@ -33,6 +32,7 @@
 		52AEF99D18C56F9E00D1B0F3 /* mathHelperSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 52AEF99418C56F9E00D1B0F3 /* mathHelperSmall.png */; };
 		52AEF99E18C56F9E00D1B0F3 /* quiz.png in Resources */ = {isa = PBXBuildFile; fileRef = 52AEF99518C56F9E00D1B0F3 /* quiz.png */; };
 		52AEF99F18C56F9E00D1B0F3 /* quiz2.png in Resources */ = {isa = PBXBuildFile; fileRef = 52AEF99618C56F9E00D1B0F3 /* quiz2.png */; };
+		52DD781A18C6A73E00066FC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AEF96818C566C100D1B0F3 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -278,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52DD781A18C6A73E00066FC1 /* Main.storyboard in Resources */,
 				52AEF99E18C56F9E00D1B0F3 /* quiz.png in Resources */,
 				52AEF99718C56F9E00D1B0F3 /* correct.jpg in Resources */,
 				52AEF99918C56F9E00D1B0F3 /* flashCards2.png in Resources */,
@@ -288,7 +289,6 @@
 				52AEF97218C566C100D1B0F3 /* Images.xcassets in Resources */,
 				52AEF96118C566C100D1B0F3 /* InfoPlist.strings in Resources */,
 				52AEF99A18C56F9E00D1B0F3 /* incorrect.jpg in Resources */,
-				52AEF96A18C566C100D1B0F3 /* Main.storyboard in Resources */,
 				52AEF99F18C56F9E00D1B0F3 /* quiz2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
