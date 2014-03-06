@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33654B3218C9237C00F3AAD1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 33654B3118C9237C00F3AAD1 /* Default-568h@2x.png */; };
 		3370676318C68D3000876D03 /* MultDivFlashCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3370676218C68D3000876D03 /* MultDivFlashCardsViewController.m */; };
 		3370676618C68F4200876D03 /* MultDivQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3370676518C68F4200876D03 /* MultDivQuizViewController.m */; };
 		52AEF95718C566C100D1B0F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AEF95618C566C100D1B0F3 /* Foundation.framework */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33654B3118C9237C00F3AAD1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3370676118C68D3000876D03 /* MultDivFlashCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultDivFlashCardsViewController.h; sourceTree = "<group>"; };
 		3370676218C68D3000876D03 /* MultDivFlashCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultDivFlashCardsViewController.m; sourceTree = "<group>"; };
 		3370676418C68F4200876D03 /* MultDivQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultDivQuizViewController.h; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		52AEF94A18C566C100D1B0F3 = {
 			isa = PBXGroup;
 			children = (
+				33654B3118C9237C00F3AAD1 /* Default-568h@2x.png */,
 				52AEF9A018C56FA500D1B0F3 /* Images */,
 				52AEF95C18C566C100D1B0F3 /* Assignment_06 */,
 				52AEF97E18C566C100D1B0F3 /* Assignment_06Tests */,
@@ -287,6 +290,7 @@
 				52AEF99B18C56F9E00D1B0F3 /* mathHelper.png in Resources */,
 				52AEF99C18C56F9E00D1B0F3 /* mathHelperBig.png in Resources */,
 				52AEF97218C566C100D1B0F3 /* Images.xcassets in Resources */,
+				33654B3218C9237C00F3AAD1 /* Default-568h@2x.png in Resources */,
 				52AEF96118C566C100D1B0F3 /* InfoPlist.strings in Resources */,
 				52AEF99A18C56F9E00D1B0F3 /* incorrect.jpg in Resources */,
 				52AEF99F18C56F9E00D1B0F3 /* quiz2.png in Resources */,

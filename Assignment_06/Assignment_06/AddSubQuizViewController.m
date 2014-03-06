@@ -95,7 +95,7 @@
         int operand2 = arc4random_uniform(99) + 1;
         int operation = arc4random_uniform(2);
         NSString* operator = (operation==0)?@"+":@"-";
-        [questionLabel setText:[NSString stringWithFormat:@"%i %@ %i\t=", operand1, operator, operand2]];
+        [questionLabel setText:[NSString stringWithFormat:@"%i %@ %i\t =", operand1, operator, operand2]];
         [self.answers addObject:[NSString stringWithFormat:@"%i", (operation==0)?(operand1+operand2):(operand1-operand2)]];
     }
 }

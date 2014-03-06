@@ -104,7 +104,7 @@
         }
         
         NSString* operator = (operationType==0)?@"*":@"/";
-        [questionLabel setText:[NSString stringWithFormat:@"%i %@ %i\t=", operand1, operator, operand2]];
+        [questionLabel setText:[NSString stringWithFormat:@"%i %@ %i  \t=", operand1, operator, operand2]];
         [self.answers addObject:[NSString stringWithFormat:@"%i", answer]];
     }
 }

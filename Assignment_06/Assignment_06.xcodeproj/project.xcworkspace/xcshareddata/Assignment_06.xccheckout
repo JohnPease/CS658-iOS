@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>328F2AF8-FDD5-4873-BA88-F962DC3DD687</string>
+	<string>9E2203B1-6492-4FBF-AE87-19DA042752B9</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Assignment_06</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>25318169-E5A1-4945-A894-482BAB6803D4</key>
-		<string>https://github.com/JohnPease/CS658-iOS</string>
+		<key>B2CB07E0-021D-4F82-A737-4837824E6319</key>
+		<string>https://github.com/JohnPease/CS658-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Assignment_06/Assignment_06.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>25318169-E5A1-4945-A894-482BAB6803D4</key>
+		<key>B2CB07E0-021D-4F82-A737-4837824E6319</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/JohnPease/CS658-iOS</string>
+	<string>https://github.com/JohnPease/CS658-iOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>25318169-E5A1-4945-A894-482BAB6803D4</string>
+	<string>B2CB07E0-021D-4F82-A737-4837824E6319</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>25318169-E5A1-4945-A894-482BAB6803D4</string>
+			<string>B2CB07E0-021D-4F82-A737-4837824E6319</string>
 			<key>IDESourceControlWCCName</key>
 			<string>CS658-iOS</string>
 		</dict>
