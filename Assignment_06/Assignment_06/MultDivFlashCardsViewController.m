@@ -26,15 +26,6 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.isQuestionDisplayed = YES;
     [self generateEquation];
-//    [self.answerLabel setText:@""];
-    
-//    UIView* underlineView = [[UIView alloc] init];
-//    CGFloat xCoordinate = self.operatorLabel.frame.origin.x;
-//    CGFloat yCoordinate = self.operatorLabel.frame.origin.y + self.operatorLabel.frame.size.height;
-//    CGFloat width = self.operatorLabel.frame.size.width + self.operand2Label.frame.size.width;
-//    underlineView.frame = CGRectMake(xCoordinate, yCoordinate, width, 5);
-//    underlineView.backgroundColor = [UIColor blackColor];
-//    [self.view addSubview:underlineView];
 }
 
 - (void)didReceiveMemoryWarning
