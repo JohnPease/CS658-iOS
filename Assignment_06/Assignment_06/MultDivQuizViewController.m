@@ -28,7 +28,8 @@
     self.correctImage = [[UIImage alloc] initWithContentsOfFile:correctImagePath];
     self.incorrectImage = [[UIImage alloc] initWithContentsOfFile:incorrectImagePath];
     
-    
+    [self generateQuiz];
+    [self.button setTitle:@"Submit Answers" forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,9 +98,9 @@
             operand2 = arc4random_uniform(9) + 1;
             answer = operand1 * operand2;
         } else {
-            operand1 = arc4random_uniform(9) + 1;
+            operand2 = arc4random_uniform(9) + 1;
             answer = arc4random_uniform(11) + 1;
-            operand2 = operand1 * answer;
+            operand1 = operand2 * answer;
         }
         
         NSString* operator = (operationType==0)?@"*":@"/";

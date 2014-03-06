@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -107,7 +107,7 @@
                             <outletCollection property="gestureRecognizers" destination="Qhr-al-3Uj" appends="YES" id="le2-Ad-djm"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mult/Div" id="e5g-0E-pFX"/>
+                    <tabBarItem key="tabBarItem" title="Mult/Div" image="flashCards2.png" id="e5g-0E-pFX"/>
                     <connections>
                         <outlet property="bottomLabel" destination="Kpx-ZE-A5d" id="bOa-eH-0fS"/>
                         <outlet property="leftLabel" destination="v5h-Em-GNx" id="TAy-Jw-cYd"/>
@@ -578,7 +578,7 @@
                             <outletCollection property="gestureRecognizers" destination="Ngk-8C-3ey" appends="YES" id="AJb-NJ-8ck"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mult/Div Quiz" id="uXe-11-9Ov"/>
+                    <tabBarItem key="tabBarItem" title="Mult/Div Quiz" image="quiz2.png" id="uXe-11-9Ov"/>
                     <connections>
                         <outlet property="button" destination="p1A-Oy-pco" id="59f-BH-Un7"/>
                         <outletCollection property="correctnessImages" destination="vgG-RD-2lv" id="OhZ-83-UXA"/>
@@ -646,7 +646,9 @@
     </scenes>
     <resources>
         <image name="flashCard.png" width="26" height="18"/>
+        <image name="flashCards2.png" width="26" height="17"/>
         <image name="quiz.png" width="18" height="19"/>
+        <image name="quiz2.png" width="30" height="23"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

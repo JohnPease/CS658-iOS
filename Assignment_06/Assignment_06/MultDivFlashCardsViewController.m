@@ -14,6 +14,8 @@
 @property(nonatomic, strong) NSString* answer;
 @property(nonatomic) BOOL isQuestionDisplayed;
 @property(nonatomic, strong) NSString* equationType;
+@property(nonatomic, strong)UIView* horizontalLine;
+@property(nonatomic, strong)UIView* verticalLine;
 @end
 
 @implementation MultDivFlashCardsViewController
@@ -58,12 +60,11 @@
 
 - (void)generateEquation {
     int operation = arc4random_uniform(2);
+    [self resetUI];
     if (operation == 0) {
-        [self resetUI];
         [self generateMultiplicationProblem];
         self.equationType = [NSString stringWithFormat:MULT];
     } else {
-        [self resetUI];
         [self generateDivisionProblem];
         self.equationType = [NSString stringWithFormat:DIV];
     }
@@ -80,13 +81,13 @@
     [self.rightLabel setText:[NSString stringWithFormat:@"%i", multiplier]];
     
     /* set lines */
-    UIView* underlineView = [[UIView alloc] init];
+    self.horizontalLine = [[UIView alloc] init];
     CGFloat xCoordinate = self.leftLabel.frame.origin.x;
     CGFloat yCoordinate = self.leftLabel.frame.origin.y + self.leftLabel.frame.size.height;
     CGFloat width = self.leftLabel.frame.size.width + self.rightLabel.frame.size.width;
-    underlineView.frame = CGRectMake(xCoordinate, yCoordinate, width, 5);
-    underlineView.backgroundColor = [UIColor blackColor];
-    [self.view addSubview:underlineView];
+    self.horizontalLine.frame = CGRectMake(xCoordinate, yCoordinate, width, 5);
+    self.horizontalLine.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:self.horizontalLine];
 }
 
 - (void)generateDivisionProblem {
@@ -100,7 +101,23 @@
     [self.leftLabel setText:[NSString stringWithFormat:@"%i", divisor]];
     [self.rightLabel setText:[NSString stringWithFormat:@"%i", dividend]];
     
-    /* set lines */
+    /* set horizontal line */
+    self.horizontalLine = [[UIView alloc] init];
+    CGFloat xCoordinate = self.rightLabel.frame.origin.x;
+    CGFloat yCoordinate = self.rightLabel.frame.origin.y;
+    CGFloat width = self.rightLabel.frame.size.width;
+    self.horizontalLine.frame = CGRectMake(xCoordinate, yCoordinate, width, 5);
+    self.horizontalLine.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:self.horizontalLine];
+    
+    /* set vertical line */
+    self.verticalLine = [[UIView alloc] init];
+    xCoordinate = self.rightLabel.frame.origin.x;
+    yCoordinate = self.rightLabel.frame.origin.y;
+    CGFloat height = self.rightLabel.frame.size.height;
+    self.verticalLine.frame = CGRectMake(xCoordinate, yCoordinate, 5, height);
+    self.verticalLine.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:self.verticalLine];
 }
 
 - (void)resetUI {
@@ -108,6 +125,9 @@
     [self.topLabel setText:@""];
     [self.rightLabel setText:@""];
     [self.bottomLabel setText:@""];
+    
+    if ([self.view.subviews containsObject:self.verticalLine]) [self.verticalLine removeFromSuperview];
+    if ([self.view.subviews containsObject:self.horizontalLine]) [self.horizontalLine removeFromSuperview];
 }
 
 @end
