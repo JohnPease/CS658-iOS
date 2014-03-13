@@ -19,12 +19,32 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    _sounds = [[NSMutableArray alloc] init];
+    [self addSounds];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) addSounds {
+    NSArray* allSounds = [[NSArray alloc] initWithObjects:@"DrSteveBrule", @"ForYourHealth", @"Mousse", @"JustHoseItOff", @"Cool", @"Fashion Victim", @"ThinkOfThat", @"Diarrhea", nil];
+    NSError *error;
+    AVAudioPlayer* audioPlayer;
+    NSURL* soundURL;
+    NSString* soundPath;
+    Sound* sound;
+    
+    for (NSString* soundString in allSounds) {
+        soundPath = [[NSBundle mainBundle] pathForResource:soundString ofType:@"mp3"];
+        soundURL = [NSURL fileURLWithPath:soundPath];
+        audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+        sound = [[Sound alloc] initWithName:soundString audioPlayer:audioPlayer];
+        [self.sounds addObject:sound];
+    }
 }
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
