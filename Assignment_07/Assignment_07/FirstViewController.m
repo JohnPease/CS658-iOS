@@ -11,6 +11,8 @@
 
 @interface FirstViewController ()
 @property(nonatomic, strong) NSMutableArray* sounds;
+@property(nonatomic, strong) NSArray* soundNames;
+@property(nonatomic, strong) NSArray* soundIcons;
 @end
 
 @implementation FirstViewController
@@ -19,7 +21,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    _sounds = [[NSMutableArray alloc] init];
+    _sounds         = [[NSMutableArray alloc] init];
+    _soundNames     = [[NSArray alloc] initWithObjects:@"LaLaLa", @"BlueYoureMyBoy", @"Loud", @"EvenLouder", @"LookOut", @"TakeAPicture", @"Moon", @"MyMistake", @"DrinkWater", @"ImTakingCrazyPills", @"TyroneAnthrax", @"MostAnnoyingSoundInTheWorld", @"NotHot", nil];
+    _soundIcons     = [[NSArray alloc] initWithObjects:@"Brule.png", @"Brule.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", nil];
+    
     [self addSounds];
 }
 
@@ -29,15 +34,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) addSounds {
-    NSArray* allSounds = [[NSArray alloc] initWithObjects:@"LaLaLa", @"BlueYoureMyBoy", @"Loud", @"EvenLouder", @"LookOut", @"TakeAPicture", @"Moon", @"MyMistake", @"DrinkWater", @"ImTakingCrazyPills", @"TyroneAnthrax", @"MostAnnoyingSoundInTheWorld", @"NotHot", nil];
+- (void)addIcons {
+    UIImage* uiImage;
+    
+    for (NSString* icon in _soundIcons) {
+        uiImage = [UIImage imageNamed:icon];
+    }
+}
+
+- (void)addSounds {
     NSError *error;
     AVAudioPlayer* audioPlayer;
     NSURL* soundURL;
     NSString* soundPath;
     Sound* sound;
     
-    for (NSString* soundString in allSounds) {
+    for (NSString* soundString in _soundNames) {
         soundPath = [[NSBundle mainBundle] pathForResource:soundString ofType:@"mp3"];
         soundURL = [NSURL fileURLWithPath:soundPath];
         audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
@@ -59,10 +71,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
 
     /* configure cell */
-    
-    cell.textLabel.frame = CGRectMake(100, 0, 0, 0);
     cell.textLabel.text = [[self.sounds objectAtIndex:indexPath.row] name];
-    UIImage* uiImage = [UIImage imageNamed:@"paw.png"];
+    UIImage* uiImage = [UIImage imageNamed:[self.soundIcons objectAtIndex:indexPath.row]];
     cell.imageView.image = uiImage;
     return cell;
 }
@@ -71,6 +81,37 @@
     Sound* sound = [self.sounds objectAtIndex:indexPath.row];
     [sound.audioPlayer prepareToPlay];
     [sound.audioPlayer play];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 5;
+}
+
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    NSString* sectionName;
+    
+    switch (section) {
+        case 0:
+            sectionName = @"Pee Wee";
+            break;
+        case 1:
+            sectionName = @"Will Ferrell";
+            break;
+        case 2:
+            sectionName = @"Chappelle";
+            break;
+        case 3:
+            sectionName = @"Dumb and Dumber";
+            break;
+        case 4:
+            sectionName = @"WARNING (LOUD)";
+            break;
+        default:
+            break;
+    }
+    
+    return sectionName;
 }
 
 @end

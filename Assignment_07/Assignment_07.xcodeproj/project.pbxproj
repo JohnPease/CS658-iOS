@@ -49,6 +49,7 @@
 		336BCF3518CFB64100D236A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 336BCF3318CFB64100D236A4 /* InfoPlist.strings */; };
 		336BCF3718CFB64100D236A4 /* Assignment_07Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BCF3618CFB64100D236A4 /* Assignment_07Tests.m */; };
 		336BCF4218CFBD0B00D236A4 /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BCF4118CFBD0B00D236A4 /* Sound.m */; };
+		5213536518D2787700AB0F1A /* Brule.png in Resources */ = {isa = PBXBuildFile; fileRef = 5213536418D2787700AB0F1A /* Brule.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		336BCF3618CFB64100D236A4 /* Assignment_07Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Assignment_07Tests.m; sourceTree = "<group>"; };
 		336BCF4018CFBD0B00D236A4 /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
 		336BCF4118CFBD0B00D236A4 /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sound.m; sourceTree = "<group>"; };
+		5213536418D2787700AB0F1A /* Brule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brule.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 		332F243118D2660D00B06B88 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				5213536418D2787700AB0F1A /* Brule.png */,
 				332F243218D2660D00B06B88 /* flags.png */,
 				332F243318D2660D00B06B88 /* carIcon.png */,
 				332F243418D2660D00B06B88 /* dogIcon.png */,
@@ -358,6 +361,7 @@
 				332F243818D2660D00B06B88 /* carIcon.png in Resources */,
 				332F241D18D2527B00B06B88 /* ForYourHealth.mp3 in Resources */,
 				332F242018D2527B00B06B88 /* Cool.mp3 in Resources */,
+				5213536518D2787700AB0F1A /* Brule.png in Resources */,
 				332F242118D2527B00B06B88 /* Fashion Victim.mp3 in Resources */,
 				332F242718D2527B00B06B88 /* LookOut.mp3 in Resources */,
 				336BCF1318CFB64000D236A4 /* InfoPlist.strings in Resources */,
