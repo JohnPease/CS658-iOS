@@ -11,6 +11,8 @@
 
 @interface SecondViewController ()
 @property(nonatomic, strong) NSMutableArray* sounds;
+@property(nonatomic, strong) NSArray* soundNames;
+@property(nonatomic, strong) NSString* soundIcon;
 @end
 
 @implementation SecondViewController
@@ -20,7 +22,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    _sounds = [[NSMutableArray alloc] init];
+    _sounds     = [[NSMutableArray alloc] init];
+    _soundNames = [[NSArray alloc] initWithObjects:@"DrSteveBrule", @"ForYourHealth", @"Mousse", @"JustHoseItOff", @"Cool", @"Fashion Victim", @"ThinkOfThat", @"Diarrhea", nil];
+    _soundIcon  = @"Brule.png";
     [self addSounds];
 }
 
@@ -31,14 +35,13 @@
 }
 
 - (void) addSounds {
-    NSArray* allSounds = [[NSArray alloc] initWithObjects:@"DrSteveBrule", @"ForYourHealth", @"Mousse", @"JustHoseItOff", @"Cool", @"Fashion Victim", @"ThinkOfThat", @"Diarrhea", nil];
     NSError *error;
     AVAudioPlayer* audioPlayer;
     NSURL* soundURL;
     NSString* soundPath;
     Sound* sound;
     
-    for (NSString* soundString in allSounds) {
+    for (NSString* soundString in _soundNames) {
         soundPath = [[NSBundle mainBundle] pathForResource:soundString ofType:@"mp3"];
         soundURL = [NSURL fileURLWithPath:soundPath];
         audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
@@ -56,7 +59,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     //Configure the cell...
-    cell.textLabel.text = [[self.sounds objectAtIndex:indexPath.row] name];
+    cell.textLabel.text     = [[self.sounds objectAtIndex:indexPath.row] name];
+    UIImage* uiImage        = [UIImage imageNamed:self.soundIcon];
+    cell.imageView.image    = uiImage;
     
     return cell;
 }

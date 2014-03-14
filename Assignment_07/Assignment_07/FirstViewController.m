@@ -22,8 +22,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     _sounds         = [[NSMutableArray alloc] init];
-    _soundNames     = [[NSArray alloc] initWithObjects:@"LaLaLa", @"BlueYoureMyBoy", @"Loud", @"EvenLouder", @"LookOut", @"TakeAPicture", @"Moon", @"MyMistake", @"DrinkWater", @"ImTakingCrazyPills", @"TyroneAnthrax", @"MostAnnoyingSoundInTheWorld", @"NotHot", nil];
-    _soundIcons     = [[NSArray alloc] initWithObjects:@"Brule.png", @"Brule.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", @"paw.png", nil];
+    _soundNames     = [[NSArray alloc] initWithObjects:@"LaLaLa", @"MyMistake", @"TakeAPicture", @"DrinkWater", @"ImTakingCrazyPills", @"BlueYoureMyBoy", @"NotHot", @"TyroneAnthrax", @"LookOut", @"Moon", @"MostAnnoyingSoundInTheWorld", @"Loud", @"EvenLouder", nil];
+    _soundIcons     = [[NSArray alloc] initWithObjects:@"PeeWee.png", @"Ferrell.png", @"Chappelle.png", @"Dumb.png", @"Loud.png", nil];
     
     [self addSounds];
 }
@@ -32,14 +32,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)addIcons {
-    UIImage* uiImage;
-    
-    for (NSString* icon in _soundIcons) {
-        uiImage = [UIImage imageNamed:icon];
-    }
 }
 
 - (void)addSounds {
@@ -58,29 +50,52 @@
     }
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.sounds count];
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
 }
-
-//- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    
-//}
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
 
+    int index = [self getIndex:indexPath.row withSection:indexPath.section];
+    
     /* configure cell */
-    cell.textLabel.text = [[self.sounds objectAtIndex:indexPath.row] name];
-    UIImage* uiImage = [UIImage imageNamed:[self.soundIcons objectAtIndex:indexPath.row]];
-    cell.imageView.image = uiImage;
+    cell.textLabel.text     = [[self.sounds objectAtIndex:index] name];
+    UIImage* uiImage        = [UIImage imageNamed:[self.soundIcons objectAtIndex:indexPath.section]];
+    cell.imageView.image    = uiImage;
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Sound* sound = [self.sounds objectAtIndex:indexPath.row];
+    int index = [self getIndex:indexPath.row withSection:indexPath.section];
+    Sound* sound = [self.sounds objectAtIndex:index];
     [sound.audioPlayer prepareToPlay];
     [sound.audioPlayer play];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+            return 3;
+            break;
+        case 1:
+            return 4;
+            break;
+        case 2:
+            return 2;
+            break;
+        case 3:
+            return 2;
+            break;
+        case 4:
+            return 2;
+            break;
+        default:
+            return 0;
+            break;
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -105,13 +120,37 @@
             sectionName = @"Dumb and Dumber";
             break;
         case 4:
-            sectionName = @"WARNING (LOUD)";
+            sectionName = @"WARNING (LOUD) (TURN VOLUME DOWN)";
             break;
         default:
             break;
     }
     
     return sectionName;
+}
+
+- (NSInteger)getIndex:(NSInteger)index withSection:(NSInteger)section {
+    
+    switch (section) {
+        case 0:
+            index += 0;
+            break;
+        case 1:
+            index += 3;
+            break;
+        case 2:
+            index += 7;
+            break;
+        case 3:
+            index += 9;
+            break;
+        case 4:
+            index += 11;
+            break;
+        default:
+            break;
+    }
+    return index;
 }
 
 @end
