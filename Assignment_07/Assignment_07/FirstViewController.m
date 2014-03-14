@@ -50,10 +50,6 @@
     }
 }
 
-//- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    
-//}
-
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -73,6 +69,11 @@
     Sound* sound = [self.sounds objectAtIndex:index];
     [sound.audioPlayer prepareToPlay];
     [sound.audioPlayer play];
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    do [cell setSelected:YES];
+    while ([sound.audioPlayer isPlaying]);
+    [cell setSelected:NO];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

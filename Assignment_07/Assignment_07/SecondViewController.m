@@ -58,7 +58,6 @@
     static NSString *CellIdentifier=@"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    //Configure the cell...
     cell.textLabel.text     = [[self.sounds objectAtIndex:indexPath.row] name];
     UIImage* uiImage        = [UIImage imageNamed:self.soundIcon];
     cell.imageView.image    = uiImage;
@@ -70,6 +69,11 @@
     Sound* sound = [self.sounds objectAtIndex:indexPath.row];
     [sound.audioPlayer prepareToPlay];
     [sound.audioPlayer play];
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    do [cell setSelected:YES];
+    while ([sound.audioPlayer isPlaying]);
+    [cell setSelected:NO];
 }
 
 @end
