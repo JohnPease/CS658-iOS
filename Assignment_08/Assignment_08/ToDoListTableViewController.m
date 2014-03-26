@@ -33,7 +33,7 @@
     self.toDoList = [[NSMutableArray alloc] init];
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,15 +54,6 @@
     NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
-}
-
-- (IBAction)editToDoListItem {
-    if ([self.tableView isEditing]) {
-        [self.editButtonItem setTitle:@"Done"];
-        [self.tableView setEditing:NO];
-    } else {
-        [self.tableView setEditing:YES];
-    }
 }
 
 #pragma mark - Table view data source
@@ -100,7 +91,6 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        NSLog(@"deleting");
         [self.toDoList removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {

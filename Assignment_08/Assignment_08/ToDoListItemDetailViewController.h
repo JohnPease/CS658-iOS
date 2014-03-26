@@ -14,8 +14,12 @@
 @property(nonatomic, weak)IBOutlet UITextField* titleTextField;
 @property(nonatomic, weak)IBOutlet UITextView* textTextView;
 @property(nonatomic, weak)IBOutlet UISwitch* completedSwitch;
+@property(nonatomic, weak)IBOutlet UIDatePicker* dueDateDatePicker;
+@property(nonatomic, weak)IBOutlet UILabel* dueDateLabel;
 @property(nonatomic, weak)ToDoListItem* item;
 
 - (IBAction)screenTapped;
+- (IBAction)dueDateLabelTapped;
+- (IBAction)dueDateDatePicked;
 
 @end

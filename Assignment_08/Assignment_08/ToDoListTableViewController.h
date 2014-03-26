@@ -11,6 +11,6 @@
 @interface ToDoListTableViewController : UITableViewController
 
 - (IBAction)addToDoListItem;
-- (IBAction)editToDoListItem;
+//- (IBAction)editToDoListItem;
 
 @end

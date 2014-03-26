@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	self.titleTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,6 +45,11 @@
         self.textTextView.text = self.item.text;
         self.textTextView.textColor = [UIColor blackColor];
     }
+	
+	if (self.item.dueDate != nil) {
+		[self.dueDateLabel setText:[self formatDate:self.item.dueDate]];
+		self.dueDateLabel.textColor = [UIColor blackColor];
+	}
     
     if (self.item.isCompleted) {
         self.completedSwitch.on = YES;
@@ -55,6 +61,9 @@
     if (![self.textTextView.text isEqualToString:@"Notes"]) {
         self.item.text = [NSMutableString stringWithString:self.textTextView.text];
     }
+	if (![self.dueDateLabel.text isEqualToString:@"None"]) {
+		self.item.dueDate = self.dueDateDatePicker.date;
+	}
     self.item.isCompleted = self.completedSwitch.isOn;
 }
 
@@ -64,7 +73,7 @@
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-    if (![textView.text isEqualToString:@"Notes"]) {
+    if ([textView.text isEqualToString:@"Notes"]) {
         textView.text = @"";
         textView.textColor = [UIColor blackColor];
     }
@@ -72,6 +81,22 @@
 
 - (IBAction)screenTapped {
     [self.view endEditing:YES];
+}
+
+- (IBAction)dueDateLabelTapped {
+	[self.dueDateDatePicker setHidden:NO];
+}
+
+- (IBAction)dueDateDatePicked {
+	[self.dueDateLabel setText:[self formatDate:self.dueDateDatePicker.date]];
+	[self.dueDateLabel setTextColor:[UIColor blackColor]];
+	[self.dueDateDatePicker setHidden:YES];
+}
+
+- (NSString*)formatDate:(NSDate*)date {
+	NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+	[formatter setDateFormat:@"MMMM d 'at' h:mm a"];
+	return [formatter stringFromDate:date];
 }
 
 /*
