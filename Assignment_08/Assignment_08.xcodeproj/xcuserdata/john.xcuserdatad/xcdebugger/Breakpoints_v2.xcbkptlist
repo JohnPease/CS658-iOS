@@ -26,28 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Assignment_08/ToDoListItemDetailViewController.m"
-            timestampString = "417493087.960963"
+            timestampString = "417586741.279875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-screenTapped"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Assignment_08/ToDoListItemDetailViewController.m"
-            timestampString = "417493087.960963"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "-dueDateLabelTapped"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "-dueDateDatePicked"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

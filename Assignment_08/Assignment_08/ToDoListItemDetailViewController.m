@@ -10,7 +10,7 @@
 #import "ToDoListItem.h"
 
 @interface ToDoListItemDetailViewController ()
-
+@property NSDate* dueDate;
 @end
 
 @implementation ToDoListItemDetailViewController
@@ -29,6 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	self.titleTextField.delegate = self;
+	[self drawLines];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,6 +49,7 @@
 	
 	if (self.item.dueDate != nil) {
 		[self.dueDateLabel setText:[self formatDate:self.item.dueDate]];
+		self.dueDate = self.item.dueDate; //keep an instance of the date chosen previously
 		self.dueDateLabel.textColor = [UIColor blackColor];
 	}
     
@@ -62,7 +64,7 @@
         self.item.text = [NSMutableString stringWithString:self.textTextView.text];
     }
 	if (![self.dueDateLabel.text isEqualToString:@"None"]) {
-		self.item.dueDate = self.dueDateDatePicker.date;
+		self.item.dueDate = self.dueDate;
 	}
     self.item.isCompleted = self.completedSwitch.isOn;
 }
@@ -88,6 +90,7 @@
 }
 
 - (IBAction)dueDateDatePicked {
+	self.dueDate = self.dueDateDatePicker.date;
 	[self.dueDateLabel setText:[self formatDate:self.dueDateDatePicker.date]];
 	[self.dueDateLabel setTextColor:[UIColor blackColor]];
 	[self.dueDateDatePicker setHidden:YES];
@@ -97,6 +100,30 @@
 	NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
 	[formatter setDateFormat:@"MMMM d 'at' h:mm a"];
 	return [formatter stringFromDate:date];
+}
+
+- (void)drawLines {
+	/* x coordinate and width is the same for each line */
+	CGFloat xCoordinate = self.titleTextField.frame.origin.x;
+	CGFloat width = self.titleTextField.frame.size.width;
+	
+	UIView* textFieldLine = [[UIView alloc] init];
+	CGFloat yCoordinate = self.titleTextField.frame.origin.y + self.titleTextField.frame.size.height;
+	textFieldLine.frame = CGRectMake(xCoordinate, yCoordinate, width, 1);
+	textFieldLine.backgroundColor = [UIColor lightGrayColor];
+	[self.view addSubview:textFieldLine];
+	
+	UIView* textViewLine = [[UIView alloc] init];
+	yCoordinate = self.textTextView.frame.origin.y + self.textTextView.frame.size.height;
+	textViewLine.frame = CGRectMake(xCoordinate, yCoordinate, width, 1);
+	textViewLine.backgroundColor = [UIColor lightGrayColor];
+	[self.view addSubview:textViewLine];
+	
+	UIView* dueDateLine = [[UIView alloc] init];
+	yCoordinate = self.dueDateLabel.frame.origin.y + self.dueDateLabel.frame.size.height;
+	dueDateLine.frame = CGRectMake(xCoordinate, yCoordinate, width, 1);
+	dueDateLine.backgroundColor = [UIColor lightGrayColor];
+	[self.view addSubview:dueDateLine];
 }
 
 /*

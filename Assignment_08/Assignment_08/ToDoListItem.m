@@ -15,7 +15,6 @@
     if (self) {
         _title       = [NSMutableString stringWithString:@"New ToDo Item"];
         _isCompleted = NO;
-//		_dueDate = [[NSDate alloc] initWithTimeIntervalSinceNow:0];
     }
     return self;
 }
