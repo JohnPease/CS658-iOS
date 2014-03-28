@@ -83,6 +83,7 @@
 
 - (IBAction)screenTapped {
     [self.view endEditing:YES];
+	[self.dueDateDatePicker setHidden:YES];
 }
 
 - (IBAction)dueDateLabelTapped {
