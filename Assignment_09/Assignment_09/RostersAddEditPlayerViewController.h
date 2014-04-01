@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class BaseballPlayer;
 
-@interface RostersEditPlayerViewController : UIViewController <UITextFieldDelegate>
+@interface RostersAddEditPlayerViewController : UIViewController <UITextFieldDelegate>
 
 @property(nonatomic, weak) IBOutlet UITextField* firstNameTextField;
 @property(nonatomic, weak) IBOutlet UITextField* lastNameTextField;

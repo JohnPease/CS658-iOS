@@ -33,6 +33,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
 	self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem* add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self.tableView action:@selector(addPlayer)];
+    UIBarButtonItem* edit = self.editButtonItem;
+    
+    self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:add, edit, nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

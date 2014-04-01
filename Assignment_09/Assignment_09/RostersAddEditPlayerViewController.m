@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 John Pease. All rights reserved.
 //
 
-#import "RostersEditPlayerViewController.h"
+#import "RostersAddEditPlayerViewController.h"
 #import "BaseballPlayer.h"
 
-@interface RostersEditPlayerViewController ()
+@interface RostersAddEditPlayerViewController ()
 
 @end
 
-@implementation RostersEditPlayerViewController
+@implementation RostersAddEditPlayerViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

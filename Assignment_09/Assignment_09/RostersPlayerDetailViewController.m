@@ -7,7 +7,7 @@
 //
 
 #import "RostersPlayerDetailViewController.h"
-#import "RostersEditPlayerViewController.h"
+#import "RostersAddEditPlayerViewController.h"
 #import "RostersPlayerWebViewController.h"
 #import "BaseballPlayer.h"
 
@@ -56,7 +56,7 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 	if ([segue.identifier isEqualToString:@"editPlayerSegue"]) {
-		RostersEditPlayerViewController* dest = [segue destinationViewController];
+		RostersAddEditPlayerViewController* dest = [segue destinationViewController];
 		dest.player = self.player;
 	} else if([segue.identifier isEqualToString:@"showPlayerWebViewSegue"]) {
 		RostersPlayerWebViewController* dest = [segue destinationViewController];
