@@ -9,8 +9,17 @@
 #import <UIKit/UIKit.h>
 @class BaseballPlayer;
 
-@interface RostersAddEditPlayerViewController : UIViewController <UITextFieldDelegate>
+@protocol RostersAddPlayerDelegate <NSObject>
 
+@required
+- (void)doneAddPlayer;
+- (void)cancelAddPlayer;
+
+@end
+
+@interface RostersAddEditPlayerViewController : UIViewController <UITextFieldDelegate, RostersAddPlayerDelegate>
+
+@property(nonatomic, weak) id <RostersAddPlayerDelegate> delegate;
 @property(nonatomic, weak) IBOutlet UITextField* firstNameTextField;
 @property(nonatomic, weak) IBOutlet UITextField* lastNameTextField;
 @property(nonatomic, weak) IBOutlet UILabel* positionLabel;

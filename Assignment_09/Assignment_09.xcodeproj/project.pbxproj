@@ -39,7 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		338424A918EB6DC700FD5EBA /* RostersAddPlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RostersAddPlayerDelegate.h; sourceTree = "<group>"; };
 		526C8C6B18EAFBB100F8DCE7 /* Assignment_09.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment_09.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		526C8C6E18EAFBB100F8DCE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		526C8C7018EAFBB100F8DCE7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -181,7 +180,6 @@
 				526C8CB318EB105500F8DCE7 /* RostersAddEditPlayerViewController.m */,
 				526C8CB518EB1A2D00F8DCE7 /* RostersPlayerWebViewController.h */,
 				526C8CB618EB1A2D00F8DCE7 /* RostersPlayerWebViewController.m */,
-				338424A918EB6DC700FD5EBA /* RostersAddPlayerDelegate.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

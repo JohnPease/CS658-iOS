@@ -17,6 +17,4 @@
 @property(nonatomic, weak) IBOutlet UIButton* moreInfoButton;
 @property(nonatomic, weak) BaseballPlayer* player;
 
-//- (IBAction)editPlayer;
-
 @end
