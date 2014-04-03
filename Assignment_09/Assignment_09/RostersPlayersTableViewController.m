@@ -8,9 +8,11 @@
 
 #import "RostersPlayersTableViewController.h"
 #import "RostersPlayerDetailViewController.h"
+#import "RostersAddEditPlayerViewController.h"
 #import "BaseballPlayer.h"
 
 @interface RostersPlayersTableViewController ()
+@property(nonatomic, strong) BaseballPlayer* player;
 @end
 
 @implementation RostersPlayersTableViewController
@@ -28,25 +30,18 @@
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//	self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    UIBarButtonItem* add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self.tableView action:@selector(addPlayer:)];
-	
+    UIBarButtonItem* add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPlayer)];
     UIBarButtonItem* edit = self.editButtonItem;
     
     self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:add, edit, nil];
 }
 
-- (IBAction)addPlayer:(UIBarButtonItem* )sender {
-	NSLog(@"***********************************************************************");
+- (void)addPlayer {
+    [self performSegueWithIdentifier:@"addPlayerSegue" sender:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-	[self.tableView reloadData];
+	[self.tableView reloadData];    
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,7 +65,6 @@
     cell.textLabel.text = [[_players objectAtIndex:indexPath.row] fullName];
     return cell;
 }
-
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -118,7 +112,29 @@
 		UITableViewCell* cell = (UITableViewCell*)sender;
 		dest.player = [self.players objectAtIndex:[self.tableView indexPathForSelectedRow].row];
 		dest.navigationItem.title = cell.textLabel.text;
-	}
+	} else if ([segue.identifier isEqualToString:@"addPlayerSegue"]) {
+        RostersAddEditPlayerViewController* dest = [segue destinationViewController];
+        dest.delegate = self;
+        dest.player = self.player;
+        dest.navigationItem.title = @"Add Player";
+    }
+}
+
+#pragma mark - RosterAddPlayerDelegate
+
+- (void)doneAddPlayer {
+//    _player = self.player;
+    if (self.player != nil) {
+        NSLog(@"adding");
+        [self.players addObject:self.player];
+    } else {
+        NSLog(@"nil, not added");
+    }
+}
+
+- (void)cancelAddPlayer {
+    _player = nil;
+    NSLog(@"canceled");
 }
 
 @end

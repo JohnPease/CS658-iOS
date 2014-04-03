@@ -58,6 +58,7 @@
 	if ([segue.identifier isEqualToString:@"editPlayerSegue"]) {
 		RostersAddEditPlayerViewController* dest = [segue destinationViewController];
 		dest.player = self.player;
+        dest.navigationItem.title = @"Edit Player";
 	} else if([segue.identifier isEqualToString:@"showPlayerWebViewSegue"]) {
 		RostersPlayerWebViewController* dest = [segue destinationViewController];
 		dest.playerUrl = self.player.url;

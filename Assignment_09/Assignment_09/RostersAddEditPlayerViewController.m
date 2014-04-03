@@ -46,13 +46,16 @@
 }
 
 - (IBAction)cancel {
+    [_delegate cancelAddPlayer];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)done {
-	self.player.firstName = self.firstNameTextField.text;
-	self.player.lastName = self.lastNameTextField.text;
-	self.player.url = self.urlTextField.text;
+    self.player.firstName = self.firstNameTextField.text;
+    self.player.lastName = self.lastNameTextField.text;
+    self.player.position = self.positionLabel.text;
+    self.player.url = self.urlTextField.text;
+	[_delegate doneAddPlayer];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 

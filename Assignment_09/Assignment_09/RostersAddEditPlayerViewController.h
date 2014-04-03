@@ -17,7 +17,7 @@
 
 @end
 
-@interface RostersAddEditPlayerViewController : UIViewController <UITextFieldDelegate, RostersAddPlayerDelegate>
+@interface RostersAddEditPlayerViewController : UIViewController <UITextFieldDelegate>
 
 @property(nonatomic, weak) id <RostersAddPlayerDelegate> delegate;
 @property(nonatomic, weak) IBOutlet UITextField* firstNameTextField;
