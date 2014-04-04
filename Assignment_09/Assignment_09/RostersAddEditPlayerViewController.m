@@ -10,7 +10,6 @@
 #import "BaseballPlayer.h"
 
 @interface RostersAddEditPlayerViewController ()
-
 @end
 
 @implementation RostersAddEditPlayerViewController
@@ -57,6 +56,32 @@
     self.player.url = self.urlTextField.text;
 	[_delegate doneAddPlayer];
 	[self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)screenTapped {
+	[self.view endEditing:YES];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+	CGFloat keyboardHeight = 216;
+				
+	if (textField.center.y > self.view.bounds.size.height - keyboardHeight) {
+		[UIView beginAnimations:Nil context:Nil];
+		[UIView setAnimationDuration:0.3];
+		self.view.frame = CGRectOffset(self.view.frame, 0, (textField.center.y - self.view.bounds.size.height));
+		[UIView commitAnimations];
+	}
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+	CGFloat keyboardHeight = 216;
+	
+	if (textField.center.y > self.view.bounds.size.height - keyboardHeight) {
+		[UIView beginAnimations:Nil context:Nil];
+		[UIView setAnimationDuration:0.3];
+		self.view.frame = CGRectOffset(self.view.frame, 0, (textField.center.y - self.view.bounds.size.height)*-1);
+		[UIView commitAnimations];
+	}
 }
 
 #pragma mark - Navigation

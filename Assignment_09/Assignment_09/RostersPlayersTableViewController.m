@@ -114,6 +114,8 @@
 		dest.navigationItem.title = cell.textLabel.text;
 	} else if ([segue.identifier isEqualToString:@"addPlayerSegue"]) {
         RostersAddEditPlayerViewController* dest = [segue destinationViewController];
+		self.player = [[BaseballPlayer alloc] init];
+		self.player.position = self.navigationItem.title;
         dest.delegate = self;
         dest.player = self.player;
         dest.navigationItem.title = @"Add Player";
@@ -123,18 +125,13 @@
 #pragma mark - RosterAddPlayerDelegate
 
 - (void)doneAddPlayer {
-//    _player = self.player;
     if (self.player != nil) {
-        NSLog(@"adding");
         [self.players addObject:self.player];
-    } else {
-        NSLog(@"nil, not added");
     }
 }
 
 - (void)cancelAddPlayer {
     _player = nil;
-    NSLog(@"canceled");
 }
 
 @end

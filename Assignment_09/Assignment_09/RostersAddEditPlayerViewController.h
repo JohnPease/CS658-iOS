@@ -28,5 +28,6 @@
 
 - (IBAction)cancel;
 - (IBAction)done;
+- (IBAction)screenTapped;
 
 @end
