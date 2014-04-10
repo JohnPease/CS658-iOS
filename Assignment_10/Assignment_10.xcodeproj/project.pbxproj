@@ -34,7 +34,7 @@
 			containerPortal = 526C8C6318EAFBB100F8DCE7 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 526C8C6A18EAFBB100F8DCE7;
-			remoteInfo = Assignment_09;
+			remoteInfo = Assignment_10;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -50,7 +50,7 @@
 		526C8C7D18EAFBB100F8DCE7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		526C8C7E18EAFBB100F8DCE7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		526C8C8118EAFBB200F8DCE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		526C8C8618EAFBB200F8DCE7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Assignment_09/Images.xcassets; sourceTree = "<group>"; };
+		526C8C8618EAFBB200F8DCE7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Assignment_10/Images.xcassets; sourceTree = "<group>"; };
 		526C8C8C18EAFBB200F8DCE7 /* Assignment_10Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Assignment_10Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		526C8C8D18EAFBB200F8DCE7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		526C8C9518EAFBB200F8DCE7 /* Assignment_10Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Assignment_10Tests-Info.plist"; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 				526C8C7518EAFBB100F8DCE7 /* Supporting Files */,
 			);
 			name = Assignment_10;
-			path = Assignment_09;
+			path = Assignment_10;
 			sourceTree = "<group>";
 		};
 		526C8C7518EAFBB100F8DCE7 /* Supporting Files */ = {
@@ -155,7 +155,7 @@
 				526C8C9418EAFBB200F8DCE7 /* Supporting Files */,
 			);
 			name = Assignment_10Tests;
-			path = Assignment_09Tests;
+			path = Assignment_10Tests;
 			sourceTree = "<group>";
 		};
 		526C8C9418EAFBB200F8DCE7 /* Supporting Files */ = {
@@ -219,7 +219,7 @@
 			dependencies = (
 			);
 			name = Assignment_10;
-			productName = Assignment_09;
+			productName = Assignment_10;
 			productReference = 526C8C6B18EAFBB100F8DCE7 /* Assignment_10.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -237,7 +237,7 @@
 				526C8C9218EAFBB200F8DCE7 /* PBXTargetDependency */,
 			);
 			name = Assignment_10Tests;
-			productName = Assignment_09Tests;
+			productName = Assignment_10Tests;
 			productReference = 526C8C8C18EAFBB200F8DCE7 /* Assignment_10Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -434,8 +434,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Assignment_09/Assignment_10-Prefix.pch";
-				INFOPLIST_FILE = "Assignment_09/Assignment_10-Info.plist";
+				GCC_PREFIX_HEADER = "Assignment_10/Assignment_10-Prefix.pch";
+				INFOPLIST_FILE = "Assignment_10/Assignment_10-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Assignment_10;
 				SDKROOT = iphoneos;
@@ -450,8 +450,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Assignment_09/Assignment_10-Prefix.pch";
-				INFOPLIST_FILE = "Assignment_09/Assignment_10-Info.plist";
+				GCC_PREFIX_HEADER = "Assignment_10/Assignment_10-Prefix.pch";
+				INFOPLIST_FILE = "Assignment_10/Assignment_10-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Assignment_10;
 				SDKROOT = iphoneos;
@@ -462,19 +462,19 @@
 		526C8CA118EAFBB200F8DCE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Assignment_09.app/Assignment_09";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Assignment_10.app/Assignment_10";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Assignment_09/Assignment_09-Prefix.pch";
+				GCC_PREFIX_HEADER = "Assignment_10/Assignment_10-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Assignment_09Tests/Assignment_10Tests-Info.plist";
+				INFOPLIST_FILE = "Assignment_10Tests/Assignment_10Tests-Info.plist";
 				PRODUCT_NAME = Assignment_10Tests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -484,15 +484,15 @@
 		526C8CA218EAFBB200F8DCE7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Assignment_09.app/Assignment_09";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Assignment_10.app/Assignment_10";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Assignment_09/Assignment_09-Prefix.pch";
-				INFOPLIST_FILE = "Assignment_09Tests/Assignment_10Tests-Info.plist";
+				GCC_PREFIX_HEADER = "Assignment_10/Assignment_10-Prefix.pch";
+				INFOPLIST_FILE = "Assignment_10Tests/Assignment_10Tests-Info.plist";
 				PRODUCT_NAME = Assignment_10Tests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
