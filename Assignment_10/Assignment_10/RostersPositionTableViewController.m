@@ -44,14 +44,14 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
 	self.pitcher = [[NSMutableArray alloc] init];
-	self.catcher = [[NSMutableArray alloc] init];;
-	self.firstBase = [[NSMutableArray alloc] init];;
-	self.secondBase = [[NSMutableArray alloc] init];;
-	self.thirdBase = [[NSMutableArray alloc] init];;
-	self.shortStop = [[NSMutableArray alloc] init];;
-	self.leftField = [[NSMutableArray alloc] init];;
-	self.centerField = [[NSMutableArray alloc] init];;
-	self.rightField = [[NSMutableArray alloc] init];;
+	self.catcher = [[NSMutableArray alloc] init];
+	self.firstBase = [[NSMutableArray alloc] init];
+	self.secondBase = [[NSMutableArray alloc] init];
+	self.thirdBase = [[NSMutableArray alloc] init];
+	self.shortStop = [[NSMutableArray alloc] init];
+	self.leftField = [[NSMutableArray alloc] init];
+	self.centerField = [[NSMutableArray alloc] init];
+	self.rightField = [[NSMutableArray alloc] init];
 	
 	self.allPositions = [[NSArray alloc] initWithObjects:self.pitcher, self.catcher, self.firstBase, self.secondBase, self.thirdBase, self.shortStop, self.leftField, self.centerField, self.rightField, nil];
 	
@@ -77,6 +77,18 @@
 	[self.catcher addObject:player];
 	player = [[BaseballPlayer alloc] initWithFirstName:@"Martin" lastName:@"Maldonado" position:@"Catcher"];
 	[self.catcher addObject:player];
+}
+
+- (BOOL)saveChanges {
+	NSString* path = [self baseballPlayersArchivePath];
+	return [NSKeyedArchiver archiveRootObject:self.allPositions toFile:path];
+}
+
+- (NSString*)baseballPlayersArchivePath {
+	NSArray* docDirs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString* documentDirectory = [docDirs objectAtIndex:0];
+	NSString* archiveFilePath = [documentDirectory stringByAppendingString:@"baseballPlayers.archive"];
+	return archiveFilePath;
 }
 
 #pragma mark - Table view data source

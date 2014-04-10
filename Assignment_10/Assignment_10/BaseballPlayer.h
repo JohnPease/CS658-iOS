@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BaseballPlayer : NSObject
+@interface BaseballPlayer : NSObject <NSCoding>
 
 @property(nonatomic, strong) NSString* firstName;
 @property(nonatomic, strong) NSString* lastName;
@@ -18,5 +18,8 @@
 - (id)init;
 - (id)initWithFirstName: (NSString*)firstName lastName:(NSString*)lastName position:(NSString*)position;
 - (NSString*)fullName;
+
+- (void)encodeWithCoder:(NSCoder *)aCoder;
+- (id)initWithCoder:(NSCoder *)aDecoder;
 
 @end

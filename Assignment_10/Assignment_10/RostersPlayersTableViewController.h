@@ -13,4 +13,6 @@
 
 @property(nonatomic, weak) NSMutableArray* players;
 
+- (BOOL)saveChanges;
+
 @end

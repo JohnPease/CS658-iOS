@@ -16,12 +16,31 @@
 - (id)initWithFirstName: (NSString*)firstName lastName:(NSString*)lastName position:(NSString*)position {
 	self = [super init];
 	if (self) {
-		_firstName = firstName;
-		_lastName = lastName;
-		_position = position;
+		_firstName	= firstName;
+		_lastName	= lastName;
+		_position	= position;
 	}
 	return self;
 }
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+	[aCoder encodeObject:_firstName forKey:@"firstName"];
+	[aCoder encodeObject:_lastName	forKey:@"lastName"];
+	[aCoder encodeObject:_position	forKey:@"position"];
+	[aCoder encodeObject:_url		forKey:@"url"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super init];
+	if (self) {
+		_firstName	= [aDecoder decodeObjectForKey:@"firstName"];
+		_lastName	= [aDecoder decodeObjectForKey:@"lastName"];
+		_position	= [aDecoder decodeObjectForKey:@"position"];
+		_url		= [aDecoder decodeObjectForKey:@"url"];
+	}
+	return self;
+}
+
 - (NSString*)fullName {
 	return [NSString stringWithFormat:@"%@ %@", _firstName, _lastName];
 }
