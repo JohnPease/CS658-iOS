@@ -14,6 +14,7 @@
 @property(nonatomic, strong) NSString* lastName;
 @property(nonatomic, strong) NSString* position;
 @property(nonatomic, strong) NSString* url;
+@property(nonatomic, strong) NSString* headshotUrl;
 
 - (id)init;
 - (id)initWithFirstName: (NSString*)firstName lastName:(NSString*)lastName position:(NSString*)position;

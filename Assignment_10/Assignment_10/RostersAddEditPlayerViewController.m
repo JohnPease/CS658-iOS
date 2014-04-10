@@ -31,6 +31,9 @@
 	self.lastNameTextField.text = self.player.lastName;
 	self.positionLabel.text = self.player.position;
 	self.urlTextField.text = self.player.url;
+	if (![self.player.headshotUrl isEqualToString:@"http://sports.cbsimg.net/images/players/unknown_hat.gif"]) {
+		self.urlHeadshot.text = self.player.headshotUrl;
+	}
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +57,9 @@
     self.player.lastName = self.lastNameTextField.text;
     self.player.position = self.positionLabel.text;
     self.player.url = self.urlTextField.text;
+	if (![self.urlHeadshot.text isEqualToString:@""]) {
+		self.player.headshotUrl = self.urlHeadshot.text;
+	}
 	[_delegate doneAddPlayer];
 	[self.navigationController popViewControllerAnimated:YES];
 }

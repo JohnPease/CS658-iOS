@@ -25,6 +25,7 @@
 @property(nonatomic, weak) IBOutlet UILabel* positionLabel;
 @property(nonatomic, weak) IBOutlet UITextField* urlTextField;
 @property(nonatomic, weak) BaseballPlayer* player;
+@property(nonatomic, weak) IBOutlet UITextField* urlHeadshot;
 
 - (IBAction)cancel;
 - (IBAction)done;

@@ -41,6 +41,10 @@
 	} else {
 		self.moreInfoButton.enabled = YES;
 	}
+	
+	NSURL* url = [NSURL URLWithString:self.player.headshotUrl];
+	NSURLRequest* request = [[NSURLRequest alloc] initWithURL:url];
+	[self.headshot loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning

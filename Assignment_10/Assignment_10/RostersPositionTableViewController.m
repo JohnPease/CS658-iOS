@@ -43,19 +43,20 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
-	self.pitcher = [[NSMutableArray alloc] init];
-	self.catcher = [[NSMutableArray alloc] init];
-	self.firstBase = [[NSMutableArray alloc] init];
-	self.secondBase = [[NSMutableArray alloc] init];
-	self.thirdBase = [[NSMutableArray alloc] init];
-	self.shortStop = [[NSMutableArray alloc] init];
-	self.leftField = [[NSMutableArray alloc] init];
-	self.centerField = [[NSMutableArray alloc] init];
-	self.rightField = [[NSMutableArray alloc] init];
-	
-	self.allPositions = [[NSArray alloc] initWithObjects:self.pitcher, self.catcher, self.firstBase, self.secondBase, self.thirdBase, self.shortStop, self.leftField, self.centerField, self.rightField, nil];
-	
-	[self createPlayers];
+	self.allPositions = [NSKeyedUnarchiver unarchiveObjectWithFile:[self baseballPlayersArchivePath]];
+	if (!self.allPositions) {
+		self.pitcher = [[NSMutableArray alloc] init];
+		self.catcher = [[NSMutableArray alloc] init];
+		self.firstBase = [[NSMutableArray alloc] init];
+		self.secondBase = [[NSMutableArray alloc] init];
+		self.thirdBase = [[NSMutableArray alloc] init];
+		self.shortStop = [[NSMutableArray alloc] init];
+		self.leftField = [[NSMutableArray alloc] init];
+		self.centerField = [[NSMutableArray alloc] init];
+		self.rightField = [[NSMutableArray alloc] init];
+		
+		self.allPositions = [[NSArray alloc] initWithObjects:self.pitcher, self.catcher, self.firstBase, self.secondBase, self.thirdBase, self.shortStop, self.leftField, self.centerField, self.rightField, nil];
+	}
 }
 
 - (void)didReceiveMemoryWarning

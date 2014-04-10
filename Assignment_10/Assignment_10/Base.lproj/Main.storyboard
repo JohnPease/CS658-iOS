@@ -266,16 +266,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfO-vv-nYB">
-                                <rect key="frame" x="20" y="76" width="229" height="47"/>
+                                <rect key="frame" x="93" y="76" width="135" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="36" translatesAutoresizingMaskIntoConstraints="NO" id="vAF-ug-ujq">
-                                <rect key="frame" x="20" y="131" width="280" height="83"/>
+                                <rect key="frame" x="93" y="124" width="186" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Position" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eob-Nv-jcN">
@@ -295,6 +295,11 @@
                                     <segue destination="iHU-OI-LCZ" kind="push" identifier="showPlayerWebViewSegue" id="NCC-00-AfB"/>
                                 </connections>
                             </button>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lJ2-lD-qeu">
+                                <rect key="frame" x="20" y="76" width="60" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -307,6 +312,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="firstNameLabel" destination="qfO-vv-nYB" id="myB-9F-gax"/>
+                        <outlet property="headshot" destination="lJ2-lD-qeu" id="jLw-al-5ym"/>
                         <outlet property="lastNameLabel" destination="vAF-ug-ujq" id="DDt-hv-RKe"/>
                         <outlet property="moreInfoButton" destination="RZB-2A-ngD" id="XKx-J5-5UE"/>
                         <outlet property="positionLabel" destination="eob-Nv-jcN" id="TXN-1j-l3f"/>
@@ -385,6 +391,18 @@
                                     <outlet property="delegate" destination="YEn-Ht-fZD" id="LNN-g9-ce5"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Headshot:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4b-xo-Mgc">
+                                <rect key="frame" x="21" y="326" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="le9-mi-U50">
+                                <rect key="frame" x="118" y="322" width="172" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -408,6 +426,7 @@
                         <outlet property="firstNameTextField" destination="XAx-Lb-qJg" id="r5E-8E-3Lw"/>
                         <outlet property="lastNameTextField" destination="Iwb-8i-ZC6" id="Uiz-ie-g82"/>
                         <outlet property="positionLabel" destination="RY0-0S-IFL" id="Q3w-dX-u0W"/>
+                        <outlet property="urlHeadshot" destination="le9-mi-U50" id="RKD-Eq-I0Q"/>
                         <outlet property="urlTextField" destination="70y-Wc-Wes" id="3ga-uF-PGY"/>
                     </connections>
                 </viewController>
