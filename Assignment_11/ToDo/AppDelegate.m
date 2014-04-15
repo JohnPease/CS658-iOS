@@ -11,6 +11,10 @@
 
 @implementation AppDelegate
 
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -30,11 +34,6 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    
-    //save data
-    UINavigationController* uinc = (UINavigationController*) self.window.rootViewController;
-    ToDoListViewController* tdlvc = [uinc.viewControllers objectAtIndex:0];
-    [tdlvc saveChanges];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -50,6 +49,56 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)saveContext {
+	NSError* error = nil;
+	NSManagedObjectContext* managedObjectContext = self.managedObjectContext;
+	if (managedObjectContext != nil) {
+		if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+			NSLog(@"Unresolved error %@@, %@", error, [error userInfo]);
+			abort();
+		}
+	}
+}
+
+- (NSManagedObjectModel*)managedObjectModel {
+	if (_managedObjectModel != nil) {
+		return _managedObjectModel;
+	}
+	NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Assignment_11" withExtension:@"momd"];
+	_managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+	return _managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator*)persistentStoreCoordinator {
+	if (_persistentStoreCoordinator != nil) {
+		return _persistentStoreCoordinator;
+	}
+	NSURL* storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Assignment_11.sqlite"];
+	NSError* error = nil;
+	_persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+	if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+	return _persistentStoreCoordinator;
+}
+
+- (NSURL*)applicationDocumentsDirectory {
+	return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (NSManagedObjectContext*)managedObjectContext {
+	if (_managedObjectContext != nil) {
+		return _managedObjectContext;
+	}
+	NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+	if (coordinator != nil) {
+		_managedObjectContext = [[NSManagedObjectContext alloc] init];
+		[_managedObjectContext setPersistentStoreCoordinator:coordinator];
+	}
+	return _managedObjectContext;
 }
 
 @end

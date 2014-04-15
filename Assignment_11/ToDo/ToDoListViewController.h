@@ -14,6 +14,5 @@
 @property(nonatomic, strong) NSMutableString* deleteOnComplete;
 
 -(IBAction)addToDoListItem;
--(BOOL)saveChanges;
 
 @end

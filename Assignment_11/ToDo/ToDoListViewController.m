@@ -34,9 +34,6 @@
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
     
-    
-    self.toDoList = [NSKeyedUnarchiver unarchiveObjectWithFile:[self toDoListItemsArchivePath]];
-    
     if(!self.toDoList) {
         self.toDoList = [[NSMutableArray alloc] init];
     }
@@ -91,20 +88,6 @@
 -(void)showSettings
 {
     [self performSegueWithIdentifier:@"ShowSettingsSegue" sender:self];
-}
-
--(NSString*)toDoListItemsArchivePath
-{
-    NSArray* docDirs= NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString* documentDirectory = [docDirs objectAtIndex:0];
-    NSString* archiveFilePath = [documentDirectory stringByAppendingPathComponent:@"toDoListItems.archive"];
-    return archiveFilePath;
-}
-
--(BOOL)saveChanges
-{
-    NSString* path = [self toDoListItemsArchivePath];
-    return [NSKeyedArchiver archiveRootObject:self.toDoList toFile:path];
 }
 
 #pragma mark - Table view data source
@@ -173,20 +156,10 @@
     }
 }
 
-
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-    ToDoListItem* item = [self.toDoList objectAtIndex:fromIndexPath.row];
-    [self.toDoList removeObjectAtIndex:fromIndexPath.row];
-    [self.toDoList insertObject:item atIndex:toIndexPath.row];
-}
-
-
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return YES;
+    return NO;
 }
 
 @end

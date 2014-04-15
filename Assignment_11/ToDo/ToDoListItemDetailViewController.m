@@ -106,9 +106,9 @@
         self.item.text = [NSMutableString stringWithString:self.textTextView.text];
     }
     if(self.completedSwitch.isOn) {
-        self.item.isCompleted = true;
+        self.item.isCompleted = [NSNumber numberWithBool:YES];
     } else {
-        self.item.isCompleted = false;
+        self.item.isCompleted = [NSNumber numberWithBool:NO];
     }
     
     if(![self.dueDateLabel.text isEqualToString:@"None"]) {

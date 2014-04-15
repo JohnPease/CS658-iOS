@@ -1,22 +1,20 @@
 //
 //  ToDoListItem.h
-//  ToDo
+//  Assignment_11
 //
-//  Created by Ryan Hardt on 3/7/14.
+//  Created by John Pease on 4/15/14.
 //  Copyright (c) 2014 Ryan Hardt. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface ToDoListItem : NSObject<NSCoding>
 
-@property(nonatomic, strong) NSMutableString* title;
-@property(nonatomic, strong) NSMutableString* text;
-@property(nonatomic) BOOL isCompleted;
-@property(nonatomic, strong) NSDate* dueDate;
+@interface ToDoListItem : NSManagedObject
 
--(id)init;
--(void)encodeWithCoder:(NSCoder *)aCoder;
--(id)initWithCoder:(NSCoder *)aDecoder;
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * text;
+@property (nonatomic, retain) NSNumber * isCompleted;
+@property (nonatomic, retain) NSDate * dueDate;
 
 @end
