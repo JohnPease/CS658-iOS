@@ -11,6 +11,7 @@
 #import "ToDoListItemDetailViewController.h"
 #import "ToDoListItemTableViewCell.h"
 #import "ToDoListSettingsTableViewController.h"
+#import "AppDelegate.h"
 
 @interface ToDoListViewController ()
 @property(nonatomic, strong) NSMutableArray* toDoList;
@@ -34,8 +35,21 @@
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
     
+    AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext* moc = [appDelegate managedObjectContext];
+    
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription* entity = [NSEntityDescription entityForName:@"ToDoListItem" inManagedObjectContext:moc];
+    [fetchRequest setEntity:entity];
+    
+//    NSSortDescriptor* sortByDate;
+//    [fetchRequest setSortDescriptors:@[sortByDate]];
+    
+    NSError* error = nil;
+    self.toDoList = [NSMutableArray arrayWithArray:[moc executeFetchRequest:fetchRequest error:&error]];
+    
     if(!self.toDoList) {
-        self.toDoList = [[NSMutableArray alloc] init];
+        NSLog(@"Unresolved error %@@, %@", error, [error userInfo]);
     }
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -75,11 +89,25 @@
 
 -(IBAction)addToDoListItem
 {
-    ToDoListItem* item = [[ToDoListItem alloc] init];
-    [self.toDoList insertObject:item atIndex:0];
+    AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext* moc = [appDelegate managedObjectContext];
+    
+    ToDoListItem* item = [NSEntityDescription insertNewObjectForEntityForName:@"ToDoListItem" inManagedObjectContext:moc];
+    item.title = @"To do list item";
+    item.isCompleted = [NSNumber numberWithBool:NO];
     
     // Create an index path for the new item
     NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//    for (int i = 0; i < self.toDoList.count; ++i) {
+//        ToDoListItem* toDoItem = [self.toDoList objectAtIndex:i];
+//        if ([toDoItem.dueDate compare:item.dueDate] == NSOrderedAscending) {
+//            [self.toDoList insertObject:item atIndex:i];
+//            [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+//            return;
+//        }
+//    }
+//    [self.toDoList addObject:item];
+    [self.toDoList insertObject:item atIndex:0];
     
     // Update the tableview with cool animations
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
@@ -107,7 +135,7 @@
     ToDoListItem* item = [self.toDoList objectAtIndex:indexPath.row];
     cell.item = item;
     cell.titleTextField.text = item.title;
-    if(item.isCompleted) {
+    if(item.isCompleted == [NSNumber numberWithBool:YES]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -147,9 +175,16 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.toDoList removeObjectAtIndex:indexPath.row];
+        ToDoListItem* item = [self.toDoList objectAtIndex:indexPath.row];
+        
         // Delete the row from the data source
+        [self.toDoList removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        /* remove from coredata */
+        AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext* moc = [appDelegate managedObjectContext];
+        [moc deleteObject:item];
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

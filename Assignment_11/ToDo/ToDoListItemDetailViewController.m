@@ -85,7 +85,7 @@
         self.textTextView.textColor = [UIColor blackColor];
     }
     
-    if(self.item.isCompleted) {
+    if(self.item.isCompleted == [NSNumber numberWithBool:YES]) {
         self.completedSwitch.on = YES;
     }
     
