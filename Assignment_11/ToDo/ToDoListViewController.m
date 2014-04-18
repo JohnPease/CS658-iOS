@@ -19,8 +19,7 @@
 
 @implementation ToDoListViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
+- (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
@@ -28,11 +27,11 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
+	NSLog(@"loading");
     self.clearsSelectionOnViewWillAppear = NO;
     
     AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
@@ -42,8 +41,8 @@
     NSEntityDescription* entity = [NSEntityDescription entityForName:@"ToDoListItem" inManagedObjectContext:moc];
     [fetchRequest setEntity:entity];
     
-//    NSSortDescriptor* sortByDate;
-//    [fetchRequest setSortDescriptors:@[sortByDate]];
+    NSSortDescriptor* sortByDate = [NSSortDescriptor sortDescriptorWithKey:@"dueDate" ascending:YES];
+    [fetchRequest setSortDescriptors:@[sortByDate]];
     
     NSError* error = nil;
     self.toDoList = [NSMutableArray arrayWithArray:[moc executeFetchRequest:fetchRequest error:&error]];
@@ -62,13 +61,14 @@
     self.navigationController.toolbarHidden = NO;
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
+-(void)viewDidAppear:(BOOL)animated {
     [self.tableView reloadData];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
+-(void)viewWillAppear:(BOOL)animated {
+	NSSortDescriptor* sortByDate = [NSSortDescriptor sortDescriptorWithKey:@"dueDate" ascending:YES];
+	self.toDoList = [NSMutableArray arrayWithArray:[self.toDoList sortedArrayUsingDescriptors:@[sortByDate]]];
+	
     if([self.deleteOnComplete isEqualToString:@"YES"]) {
         ToDoListItem* item;
         for(int i=0; i<self.toDoList.count; ++i) {
@@ -81,14 +81,12 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)addToDoListItem
-{
+-(IBAction)addToDoListItem {
     AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext* moc = [appDelegate managedObjectContext];
     
@@ -98,36 +96,24 @@
     
     // Create an index path for the new item
     NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    for (int i = 0; i < self.toDoList.count; ++i) {
-//        ToDoListItem* toDoItem = [self.toDoList objectAtIndex:i];
-//        if ([toDoItem.dueDate compare:item.dueDate] == NSOrderedAscending) {
-//            [self.toDoList insertObject:item atIndex:i];
-//            [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
-//            return;
-//        }
-//    }
-//    [self.toDoList addObject:item];
     [self.toDoList insertObject:item atIndex:0];
     
     // Update the tableview with cool animations
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
 }
 
--(void)showSettings
-{
+-(void)showSettings {
     [self performSegueWithIdentifier:@"ShowSettingsSegue" sender:self];
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.toDoList.count;
 
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"ListItemCell";
     ToDoListItemTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
@@ -147,8 +133,7 @@
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     //always check to see which segue it is
@@ -165,8 +150,7 @@
 }
 
 // Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
 
@@ -192,8 +176,7 @@
 }
 
 // Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
 }
 
