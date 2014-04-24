@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol BrewersRefreshPlayerDelegate <NSObject>
+
+@required
+- (void)refreshPlayers;
+
+@end
+
 @interface BrewersSettingsTableViewController : UITableViewController
 
+@property(nonatomic, weak) id <BrewersRefreshPlayerDelegate> delegate;
 @property(nonatomic, weak) IBOutlet UISwitch* offlineModeSwitch;
 @property(nonatomic, weak) IBOutlet UIButton* refreshPlayerButton;
 @property(nonatomic, weak) NSMutableString* offlineMode;

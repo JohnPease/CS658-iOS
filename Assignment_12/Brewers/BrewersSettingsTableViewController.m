@@ -7,6 +7,8 @@
 //
 
 #import "BrewersSettingsTableViewController.h"
+#import "BrewersPositionTableViewController.h"
+#import "AppDelegate.h"
 
 @interface BrewersSettingsTableViewController ()
 
@@ -32,17 +34,26 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    if (self.offlineModeSwitch.isOn) {
-        [self.refreshPlayerButton setEnabled:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.offlineMode = [[NSUserDefaults standardUserDefaults] objectForKey:OfflineModeKey];
+    if ([self.offlineMode isEqualToString:@"YES"]) {
+        [self.offlineModeSwitch setOn:YES];
+    } else {
+        [self.offlineModeSwitch setOn:NO];
     }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     if (self.offlineModeSwitch.isOn) {
         self.offlineMode = [NSMutableString stringWithString:@"YES"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:OfflineModeKey];
     } else if (!self.offlineModeSwitch.isOn) {
         self.offlineMode = [NSMutableString stringWithString:@"NO"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"NO" forKey:OfflineModeKey];
     }
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,9 +64,21 @@
 
 - (IBAction)refreshPlayersButtonPressed {
     /* refresh players using web service in helper thread */
+    /* CAN JUST CLEAR ALL PLAYERS FROM MOC */
+    /* delete all players from managed object context */
+    AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext* moc = [appDelegate managedObjectContext];
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:[NSEntityDescription entityForName:@"BrewersPlayer" inManagedObjectContext:moc]];
+    NSArray* fetchResults = [moc executeFetchRequest:fetchRequest error:nil];
+    for (id player in fetchResults) {
+        [moc deleteObject:player];
+    }
+    [_delegate refreshPlayers];
 }
 
 - (IBAction)offlineModeSwitched {
+    /* ONLY CLEAR DATA THE FRST TIME IT IS SWITCHED ON */
     [self.refreshPlayerButton setEnabled:!self.offlineModeSwitch.isOn];
 }
 
