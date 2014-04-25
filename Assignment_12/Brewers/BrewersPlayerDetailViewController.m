@@ -9,6 +9,7 @@
 #import "BrewersPlayerDetailViewController.h"
 #import "BrewersPlayer.h"
 #import "BrewersPlayerWebViewController.h"
+#import "BrewersPositionTableViewController.h"
 
 @interface BrewersPlayerDetailViewController ()
 
@@ -41,6 +42,10 @@
         self.moreInfoButton.enabled = NO;
     } else {
         self.moreInfoButton.enabled = YES;
+    }
+    
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:OfflineModeKey] isEqualToString:@"YES"]) {
+        self.moreInfoButton.enabled = NO;
     }
 	
     UIImage* headshot = [UIImage imageWithData:self.player.headshot];

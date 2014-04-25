@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BrewersSettingsTableViewController.h"
 
-@interface BrewersPositionTableViewController : UITableViewController
+#define OfflineModeKey @"OfflineModeKey"
+
+@interface BrewersPositionTableViewController : UITableViewController <BrewersRefreshPlayerDelegate>
+
+@property(nonatomic, strong) NSMutableString* offlineMode;
 
 @end

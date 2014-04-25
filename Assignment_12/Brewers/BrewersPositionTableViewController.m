@@ -8,6 +8,7 @@
 
 #import "BrewersPositionTableViewController.h"
 #import "BrewersPlayersTableViewController.h"
+#import "BrewersSettingsTableViewController.h"
 #import "BrewersPlayer.h"
 #import "AppDelegate.h"
 
@@ -73,7 +74,9 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"ShowSettingsSegue"]) {
-
+        BrewersSettingsTableViewController* dest = [segue destinationViewController];
+        NSLog(@"going to settings: %@", self.offlineMode);
+        dest.delegate = self;
     } else {
         BrewersPlayersTableViewController* dest = [segue destinationViewController];
         Position position = (Position)[self.tableView indexPathForSelectedRow].row+1;
@@ -137,6 +140,15 @@
 		[players addObject:player];
 	}
 	return players;
+}
+
+- (void)refreshPlayers {
+    
+    for (int i = 0; i <= 10; ++i) {
+        Position pos = i;
+        NSMutableArray* players = [self playersForPosition:pos];
+        
+    }
 }
 
 @end
