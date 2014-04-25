@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define FirstTimeKey @"FirstTimeKey"
+
 @protocol BrewersRefreshPlayerDelegate <NSObject>
 
 @required

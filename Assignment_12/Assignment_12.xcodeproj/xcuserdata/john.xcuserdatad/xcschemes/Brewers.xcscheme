@@ -20,6 +20,20 @@
                ReferencedContainer = "container:brewers.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9447C02018D729C8005CFB43"
+               BuildableName = "Brewers.app"
+               BlueprintName = "Brewers"
+               ReferencedContainer = "container:Assignment_12.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -45,7 +59,7 @@
             BlueprintIdentifier = "9447C02018D729C8005CFB43"
             BuildableName = "Brewers.app"
             BlueprintName = "Brewers"
-            ReferencedContainer = "container:brewers.xcodeproj">
+            ReferencedContainer = "container:Assignment_12.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +78,7 @@
             BlueprintIdentifier = "9447C02018D729C8005CFB43"
             BuildableName = "Brewers.app"
             BlueprintName = "Brewers"
-            ReferencedContainer = "container:brewers.xcodeproj">
+            ReferencedContainer = "container:Assignment_12.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>

@@ -13,6 +13,4 @@
 
 @interface BrewersPositionTableViewController : UITableViewController <BrewersRefreshPlayerDelegate>
 
-@property(nonatomic, strong) NSMutableString* offlineMode;
-
 @end

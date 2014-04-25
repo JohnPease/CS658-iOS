@@ -42,22 +42,27 @@
     self.navigationController.toolbarHidden = NO;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+	self.navigationController.toolbarHidden = NO;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+	self.navigationController.toolbarHidden = YES;
+}
+
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     return 10;
 }
@@ -69,13 +74,11 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"ShowSettingsSegue"]) {
         BrewersSettingsTableViewController* dest = [segue destinationViewController];
-        NSLog(@"going to settings: %@", self.offlineMode);
         dest.delegate = self;
     } else {
         BrewersPlayersTableViewController* dest = [segue destinationViewController];
@@ -106,7 +109,7 @@
     
     if(!fetchResults) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-    } else if (fetchResults.count == 0) {
+    } else if (fetchResults.count == 0 && [[[NSUserDefaults standardUserDefaults] objectForKey:OfflineModeKey] isEqualToString:@"NO"]) {
 		//obtain players from web service
 		fetchResults = [self playersFromWebServiceForPosition:position withMoc:moc];
 	}
@@ -143,11 +146,11 @@
 }
 
 - (void)refreshPlayers {
-    
-    for (int i = 0; i <= 10; ++i) {
-        Position pos = i;
-        NSMutableArray* players = [self playersForPosition:pos];
-        
+	AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext* moc = [appDelegate managedObjectContext];
+	
+    for (int pos = 0; pos <= 10; ++pos) {
+        [self playersFromWebServiceForPosition:pos withMoc:moc];
     }
 }
 

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BrewersPositionTableViewController.h"
+#import "BrewersSettingsTableViewController.h"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @implementation AppDelegate
@@ -25,7 +26,7 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
     
-    NSDictionary* myDefaults = @{OfflineModeKey: @"NO"};
+    NSDictionary* myDefaults = @{OfflineModeKey: @"NO", FirstTimeKey: @"YUP"};
     [[NSUserDefaults standardUserDefaults] registerDefaults:myDefaults];
 
     return YES;

@@ -43,6 +43,7 @@
     } else {
         [self.offlineModeSwitch setOn:NO];
     }
+	[self.refreshPlayerButton setEnabled:!self.offlineModeSwitch.isOn];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -63,10 +64,27 @@
 }
 
 - (IBAction)refreshPlayersButtonPressed {
-    /* refresh players using web service in helper thread */
-    /* CAN JUST CLEAR ALL PLAYERS FROM MOC */
-    /* delete all players from managed object context */
-    AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
+    [self clearPlayerData];
+	[self refreshPlayers];
+}
+
+- (IBAction)offlineModeSwitched {
+	if ([[[NSUserDefaults standardUserDefaults] objectForKey:FirstTimeKey] isEqualToString:@"YUP"]) {
+		[self clearPlayerData];
+		[self refreshPlayers];
+		[[NSUserDefaults standardUserDefaults] setObject:@"NOPE" forKey:FirstTimeKey];
+	}
+    [self.refreshPlayerButton setEnabled:!self.offlineModeSwitch.isOn];
+}
+
+- (void)refreshPlayers {
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+		[_delegate refreshPlayers];
+	});
+}
+
+- (void)clearPlayerData {
+	AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext* moc = [appDelegate managedObjectContext];
     NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:[NSEntityDescription entityForName:@"BrewersPlayer" inManagedObjectContext:moc]];
@@ -74,12 +92,6 @@
     for (id player in fetchResults) {
         [moc deleteObject:player];
     }
-    [_delegate refreshPlayers];
-}
-
-- (IBAction)offlineModeSwitched {
-    /* ONLY CLEAR DATA THE FRST TIME IT IS SWITCHED ON */
-    [self.refreshPlayerButton setEnabled:!self.offlineModeSwitch.isOn];
 }
 
 #pragma mark - Table view data source

@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		334DF0E7190717FE008F2F22 /* BrewersSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334DF0E6190717FE008F2F22 /* BrewersSettingsTableViewController.m */; };
-		52B3A9A61905EA960033D7C9 /* BrewersPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3A9A51905EA960033D7C9 /* BrewersPlayer.m */; };
+		527053C0190A205900B6C7E0 /* Brewers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 527053BE190A205900B6C7E0 /* Brewers.xcdatamodeld */; };
+		527053C3190A20C600B6C7E0 /* BrewersPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 527053C2190A20C600B6C7E0 /* BrewersPlayer.m */; };
 		9447C02518D729C8005CFB43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9447C02418D729C8005CFB43 /* Foundation.framework */; };
 		9447C02718D729C8005CFB43 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9447C02618D729C8005CFB43 /* CoreGraphics.framework */; };
 		9447C02918D729C8005CFB43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9447C02818D729C8005CFB43 /* UIKit.framework */; };
@@ -27,7 +28,6 @@
 		9447C06718D7609C005CFB43 /* BrewersPlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9447C06618D7609C005CFB43 /* BrewersPlayerDetailViewController.m */; };
 		9447C06D18D77832005CFB43 /* BrewersPlayerWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9447C06C18D77832005CFB43 /* BrewersPlayerWebViewController.m */; };
 		94955B9118EC9E780081E09A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94955B9018EC9E780081E09A /* CoreData.framework */; };
-		94955B9418EC9ED50081E09A /* Brewers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94955B9218EC9ED50081E09A /* Brewers.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +43,9 @@
 /* Begin PBXFileReference section */
 		334DF0E5190717FE008F2F22 /* BrewersSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrewersSettingsTableViewController.h; sourceTree = "<group>"; };
 		334DF0E6190717FE008F2F22 /* BrewersSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrewersSettingsTableViewController.m; sourceTree = "<group>"; };
-		52B3A9A41905EA960033D7C9 /* BrewersPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrewersPlayer.h; sourceTree = "<group>"; };
-		52B3A9A51905EA960033D7C9 /* BrewersPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrewersPlayer.m; sourceTree = "<group>"; };
+		527053BF190A205900B6C7E0 /* Brewers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Brewers.xcdatamodel; sourceTree = "<group>"; };
+		527053C1190A20C600B6C7E0 /* BrewersPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrewersPlayer.h; sourceTree = "<group>"; };
+		527053C2190A20C600B6C7E0 /* BrewersPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrewersPlayer.m; sourceTree = "<group>"; };
 		9447C02118D729C8005CFB43 /* Brewers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brewers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9447C02418D729C8005CFB43 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9447C02618D729C8005CFB43 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,7 +72,6 @@
 		9447C06B18D77832005CFB43 /* BrewersPlayerWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrewersPlayerWebViewController.h; sourceTree = "<group>"; };
 		9447C06C18D77832005CFB43 /* BrewersPlayerWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrewersPlayerWebViewController.m; sourceTree = "<group>"; };
 		94955B9018EC9E780081E09A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		94955B9318EC9ED50081E09A /* Brewers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Brewers.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,9 +174,9 @@
 		9447C05F18D7324F005CFB43 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				94955B9218EC9ED50081E09A /* Brewers.xcdatamodeld */,
-				52B3A9A41905EA960033D7C9 /* BrewersPlayer.h */,
-				52B3A9A51905EA960033D7C9 /* BrewersPlayer.m */,
+				527053BE190A205900B6C7E0 /* Brewers.xcdatamodeld */,
+				527053C1190A20C600B6C7E0 /* BrewersPlayer.h */,
+				527053C2190A20C600B6C7E0 /* BrewersPlayer.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -305,14 +305,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52B3A9A61905EA960033D7C9 /* BrewersPlayer.m in Sources */,
-				94955B9418EC9ED50081E09A /* Brewers.xcdatamodeld in Sources */,
 				9447C06718D7609C005CFB43 /* BrewersPlayerDetailViewController.m in Sources */,
 				9447C06D18D77832005CFB43 /* BrewersPlayerWebViewController.m in Sources */,
+				527053C3190A20C600B6C7E0 /* BrewersPlayer.m in Sources */,
 				334DF0E7190717FE008F2F22 /* BrewersSettingsTableViewController.m in Sources */,
 				9447C05E18D7324B005CFB43 /* BrewersPlayersTableViewController.m in Sources */,
 				9447C03518D729C8005CFB43 /* AppDelegate.m in Sources */,
 				9447C05B18D72A22005CFB43 /* BrewersPositionTableViewController.m in Sources */,
+				527053C0190A205900B6C7E0 /* Brewers.xcdatamodeld in Sources */,
 				9447C03118D729C8005CFB43 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,12 +536,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		94955B9218EC9ED50081E09A /* Brewers.xcdatamodeld */ = {
+		527053BE190A205900B6C7E0 /* Brewers.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				94955B9318EC9ED50081E09A /* Brewers.xcdatamodel */,
+				527053BF190A205900B6C7E0 /* Brewers.xcdatamodel */,
 			);
-			currentVersion = 94955B9318EC9ED50081E09A /* Brewers.xcdatamodel */;
+			currentVersion = 527053BF190A205900B6C7E0 /* Brewers.xcdatamodel */;
 			path = Brewers.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
