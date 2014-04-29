@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="BrewersHeadshot" representedClassName="BrewersHeadshot" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BrewersPlayer" inverseName="headshot" inverseEntity="BrewersPlayer" syncable="YES"/>
+    </entity>
+    <entity name="BrewersPlayer" representedClassName="BrewersPlayer" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="playerId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="headshot" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BrewersHeadshot" inverseName="players" inverseEntity="BrewersHeadshot" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BrewersPlayer" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="BrewersHeadshot" positionX="-63" positionY="18" width="128" height="88"/>
+    </elements>
+</model>
