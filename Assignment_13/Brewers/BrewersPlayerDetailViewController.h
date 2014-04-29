@@ -17,5 +17,7 @@
 @property(nonatomic, weak) IBOutlet UILabel* positionLabel;
 @property(nonatomic, weak) IBOutlet UIButton* moreInfoButton;
 @property(nonatomic, weak) IBOutlet UIImageView* headshotImageView;
+@property(nonatomic, weak) IBOutlet UILabel* statsIndicatorLabel;
+@property(nonatomic, weak) IBOutlet UILabel* statsValueLabel;
 
 @end

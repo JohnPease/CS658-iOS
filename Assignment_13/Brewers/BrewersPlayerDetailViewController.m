@@ -43,6 +43,8 @@
     BOOL isOfflineModeEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:isOfflineModeEnabledKey];
     if(isOfflineModeEnabled) {
         self.moreInfoButton.enabled = NO;
+        self.statsIndicatorLabel.text = @"";
+        self.statsValueLabel.text = @"Stats unavailable in offline mode.";
     } else {
         self.moreInfoButton.enabled = YES;
     }
