@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		23964947190D6393003F2AC5 /* BrewersPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 23964946190D6393003F2AC5 /* BrewersPlayer.m */; };
 		2396494D190D6417003F2AC5 /* BrewersHeadshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 2396494C190D6417003F2AC5 /* BrewersHeadshot.m */; };
-		941434BF18F6F2D600857CA9 /* Brewers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 941434BD18F6F2D600857CA9 /* Brewers.xcdatamodeld */; };
+		525B90051913F67800478AFD /* Brewers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 525B90031913F67800478AFD /* Brewers.xcdatamodeld */; };
+		525B90081913F85B00478AFD /* PositionPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 525B90071913F85B00478AFD /* PositionPlayer.m */; };
+		525B900B1913F85C00478AFD /* Pitcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 525B900A1913F85C00478AFD /* Pitcher.m */; };
 		941434C818F7198E00857CA9 /* BrewersSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941434C718F7198E00857CA9 /* BrewersSettingsTableViewController.m */; };
 		9436951E18F08A1600B5AA69 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9436951D18F08A1600B5AA69 /* CoreData.framework */; };
 		9447C02518D729C8005CFB43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9447C02418D729C8005CFB43 /* Foundation.framework */; };
@@ -46,7 +48,11 @@
 		23964946190D6393003F2AC5 /* BrewersPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BrewersPlayer.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2396494B190D6417003F2AC5 /* BrewersHeadshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BrewersHeadshot.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2396494C190D6417003F2AC5 /* BrewersHeadshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BrewersHeadshot.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		941434BE18F6F2D600857CA9 /* Brewers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Brewers.xcdatamodel; sourceTree = "<group>"; };
+		525B90041913F67800478AFD /* Brewers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Brewers.xcdatamodel; sourceTree = "<group>"; };
+		525B90061913F85B00478AFD /* PositionPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionPlayer.h; sourceTree = "<group>"; };
+		525B90071913F85B00478AFD /* PositionPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionPlayer.m; sourceTree = "<group>"; };
+		525B90091913F85C00478AFD /* Pitcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pitcher.h; sourceTree = "<group>"; };
+		525B900A1913F85C00478AFD /* Pitcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pitcher.m; sourceTree = "<group>"; };
 		941434C618F7198E00857CA9 /* BrewersSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BrewersSettingsTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		941434C718F7198E00857CA9 /* BrewersSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BrewersSettingsTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9436951D18F08A1600B5AA69 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -177,11 +183,15 @@
 		9447C05F18D7324F005CFB43 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				941434BD18F6F2D600857CA9 /* Brewers.xcdatamodeld */,
+				525B90031913F67800478AFD /* Brewers.xcdatamodeld */,
 				2396494B190D6417003F2AC5 /* BrewersHeadshot.h */,
 				2396494C190D6417003F2AC5 /* BrewersHeadshot.m */,
 				23964945190D6393003F2AC5 /* BrewersPlayer.h */,
 				23964946190D6393003F2AC5 /* BrewersPlayer.m */,
+				525B90091913F85C00478AFD /* Pitcher.h */,
+				525B900A1913F85C00478AFD /* Pitcher.m */,
+				525B90061913F85B00478AFD /* PositionPlayer.h */,
+				525B90071913F85B00478AFD /* PositionPlayer.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -310,14 +320,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				941434BF18F6F2D600857CA9 /* Brewers.xcdatamodeld in Sources */,
 				9447C06718D7609C005CFB43 /* BrewersPlayerDetailViewController.m in Sources */,
 				9447C06D18D77832005CFB43 /* BrewersPlayerWebViewController.m in Sources */,
+				525B90081913F85B00478AFD /* PositionPlayer.m in Sources */,
+				525B900B1913F85C00478AFD /* Pitcher.m in Sources */,
 				2396494D190D6417003F2AC5 /* BrewersHeadshot.m in Sources */,
 				23964947190D6393003F2AC5 /* BrewersPlayer.m in Sources */,
 				9447C05E18D7324B005CFB43 /* BrewersPlayersTableViewController.m in Sources */,
 				941434C818F7198E00857CA9 /* BrewersSettingsTableViewController.m in Sources */,
 				9447C03518D729C8005CFB43 /* AppDelegate.m in Sources */,
+				525B90051913F67800478AFD /* Brewers.xcdatamodeld in Sources */,
 				9447C05B18D72A22005CFB43 /* BrewersPositionTableViewController.m in Sources */,
 				9447C03118D729C8005CFB43 /* main.m in Sources */,
 			);
@@ -544,12 +556,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		941434BD18F6F2D600857CA9 /* Brewers.xcdatamodeld */ = {
+		525B90031913F67800478AFD /* Brewers.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				941434BE18F6F2D600857CA9 /* Brewers.xcdatamodel */,
+				525B90041913F67800478AFD /* Brewers.xcdatamodel */,
 			);
-			currentVersion = 941434BE18F6F2D600857CA9 /* Brewers.xcdatamodel */;
+			currentVersion = 525B90041913F67800478AFD /* Brewers.xcdatamodel */;
 			path = Brewers.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>241E2CAD-7FFF-474B-AF4B-777890A019A4</string>
+	<string>E9B7D793-1445-4937-9D7F-EA9861B31929</string>
 	<key>IDESourceControlProjectName</key>
-	<string>brewers</string>
+	<string>Brewers</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>835CFCDB-4125-4979-9B39-F6A45AF811DF</key>
-		<string>ssh://github.com/JohnPlease/CS658-iOS.git</string>
+		<key>062DCB05-E269-4291-AC82-0C107F3020F0</key>
+		<string>http://github.com/JohnPease/CS658-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Brewers/brewers.xcodeproj/project.xcworkspace</string>
+	<string>Assignment_13/Brewers.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>835CFCDB-4125-4979-9B39-F6A45AF811DF</key>
+		<key>062DCB05-E269-4291-AC82-0C107F3020F0</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/JohnPlease/CS658-iOS.git</string>
+	<string>http://github.com/JohnPease/CS658-iOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>835CFCDB-4125-4979-9B39-F6A45AF811DF</string>
+	<string>062DCB05-E269-4291-AC82-0C107F3020F0</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>835CFCDB-4125-4979-9B39-F6A45AF811DF</string>
+			<string>062DCB05-E269-4291-AC82-0C107F3020F0</string>
 			<key>IDESourceControlWCCName</key>
-			<string>CS658</string>
+			<string>CS658-iOS</string>
 		</dict>
 	</array>
 </dict>

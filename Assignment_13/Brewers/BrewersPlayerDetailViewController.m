@@ -8,6 +8,8 @@
 
 #import "BrewersPlayerDetailViewController.h"
 #import "BrewersPlayer.h"
+#import "PositionPlayer.h"
+#import "Pitcher.h"
 #import "BrewersPlayerWebViewController.h"
 #import "BrewersSettingsTableViewController.h"
 #import "BrewersHeadshot.h"
@@ -51,6 +53,14 @@
     NSData* imageData = [self.player.headshot data];
     UIImage* headshot = [UIImage imageWithData:imageData];
     self.headshotImageView.image = headshot;
+}
+
+- (void)loadStatsData {
+	if ([[BrewersPlayer nameForPosition:[self.player.position intValue]] isEqualToString:@"PITCHER"]) {
+		
+	} else {
+		PositionPlayer *player = self.player;
+	}
 }
 
 - (void)didReceiveMemoryWarning
